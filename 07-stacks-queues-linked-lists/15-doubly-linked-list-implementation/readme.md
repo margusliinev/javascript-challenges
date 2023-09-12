@@ -10,9 +10,9 @@ We will first create a `Node` function that will be used to create nodes for our
 
 ```js
 function Node(data) {
-  this.data = data;
-  this.next = null;
-  this.prev = null;
+    this.data = data;
+    this.next = null;
+    this.prev = null;
 }
 ```
 
@@ -22,9 +22,9 @@ Next, we will create a `DoublyLinkedList` function that will be used to create d
 
 ```js
 function DoublyLinkedList() {
-  this.head = null;
-  this.tail = null;
-  this.length = 0;
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
 }
 ```
 
@@ -34,18 +34,18 @@ We will add a method called `append` to the `DoublyLinkedList` prototype. This m
 
 ```js
 DoublyLinkedList.prototype.append = function (data) {
-  const newNode = new Node(data);
+    const newNode = new Node(data);
 
-  if (!this.head) {
-    this.head = newNode;
-    this.tail = newNode;
-  } else {
-    newNode.prev = this.tail;
-    this.tail.next = newNode;
-    this.tail = newNode;
-  }
+    if (!this.head) {
+        this.head = newNode;
+        this.tail = newNode;
+    } else {
+        newNode.prev = this.tail;
+        this.tail.next = newNode;
+        this.tail = newNode;
+    }
 
-  this.length++;
+    this.length++;
 };
 ```
 
@@ -91,12 +91,12 @@ Let's create a method to print out all of the data in the list. We will add a me
 
 ```js
 DoublyLinkedList.prototype.printAll = function () {
-  let current = this.head;
+    let current = this.head;
 
-  while (current) {
-    console.log(current.data);
-    current = current.next;
-  }
+    while (current) {
+        console.log(current.data);
+        current = current.next;
+    }
 };
 ```
 
@@ -126,18 +126,18 @@ Let's add a function to add a node to the beginning of the list. We will call th
 
 ```js
 DoublyLinkedList.prototype.prepend = function (data) {
-  const newNode = new Node(data);
+    const newNode = new Node(data);
 
-  if (!this.head) {
-    this.head = newNode;
-    this.tail = newNode;
-  } else {
-    newNode.next = this.head;
-    this.head.prev = newNode;
-    this.head = newNode;
-  }
+    if (!this.head) {
+        this.head = newNode;
+        this.tail = newNode;
+    } else {
+        newNode.next = this.head;
+        this.head.prev = newNode;
+        this.head = newNode;
+    }
 
-  this.length++;
+    this.length++;
 };
 ```
 
@@ -171,31 +171,31 @@ Let's add a function to insert a node at a specific index. We will call this fun
 
 ```js
 DoublyLinkedList.prototype.insert = function (index, data) {
-  if (index < 0 || index > this.length) {
-    return null;
-  }
+    if (index < 0 || index > this.length) {
+        return null;
+    }
 
-  if (index === 0) {
-    return this.prepend(data);
-  }
+    if (index === 0) {
+        return this.prepend(data);
+    }
 
-  if (index === this.length) {
-    return this.append(data);
-  }
+    if (index === this.length) {
+        return this.append(data);
+    }
 
-  const newNode = new Node(data);
-  let currentNode = this.head;
+    const newNode = new Node(data);
+    let currentNode = this.head;
 
-  for (let i = 0; i < index - 1; i++) {
-    currentNode = currentNode.next;
-  }
+    for (let i = 0; i < index - 1; i++) {
+        currentNode = currentNode.next;
+    }
 
-  newNode.next = currentNode.next;
-  newNode.prev = currentNode;
-  currentNode.next.prev = newNode;
-  currentNode.next = newNode;
+    newNode.next = currentNode.next;
+    newNode.prev = currentNode;
+    currentNode.next.prev = newNode;
+    currentNode.next = newNode;
 
-  this.length++;
+    this.length++;
 };
 ```
 
@@ -233,16 +233,16 @@ Let's add a function to get a node at a specific index. We will call this functi
 
 ```js
 DoublyLinkedList.prototype.get = function (index) {
-  if (index < 0 || index >= this.length) {
-    return null;
-  }
+    if (index < 0 || index >= this.length) {
+        return null;
+    }
 
-  let currentNode = this.head;
-  for (let i = 0; i < index; i++) {
-    currentNode = currentNode.next;
-  }
+    let currentNode = this.head;
+    for (let i = 0; i < index; i++) {
+        currentNode = currentNode.next;
+    }
 
-  return currentNode;
+    return currentNode;
 };
 ```
 
@@ -274,32 +274,32 @@ Let's add a function to remove a node at a specific index. We will call this fun
 
 ```js
 DoublyLinkedList.prototype.remove = function (data) {
-  if (!this.head) return;
+    if (!this.head) return;
 
-  let currentNode = this.head;
-  while (currentNode) {
-    if (currentNode.data === data) {
-      if (currentNode === this.head) {
-        this.head = currentNode.next;
-        if (this.head) {
-          this.head.prev = null;
+    let currentNode = this.head;
+    while (currentNode) {
+        if (currentNode.data === data) {
+            if (currentNode === this.head) {
+                this.head = currentNode.next;
+                if (this.head) {
+                    this.head.prev = null;
+                }
+            } else if (currentNode === this.tail) {
+                this.tail = currentNode.prev;
+                this.tail.next = null;
+            } else {
+                currentNode.prev.next = currentNode.next;
+                currentNode.next.prev = currentNode.prev;
+            }
+
+            this.length--;
+            return true;
         }
-      } else if (currentNode === this.tail) {
-        this.tail = currentNode.prev;
-        this.tail.next = null;
-      } else {
-        currentNode.prev.next = currentNode.next;
-        currentNode.next.prev = currentNode.prev;
-      }
 
-      this.length--;
-      return true;
+        currentNode = currentNode.next;
     }
 
-    currentNode = currentNode.next;
-  }
-
-  return false;
+    return false;
 };
 ```
 
@@ -346,78 +346,78 @@ World
 
 ```js
 describe('DoublyLinkedList', () => {
-  let list;
+    let list;
 
-  beforeEach(() => {
-    list = new DoublyLinkedList();
-  });
+    beforeEach(() => {
+        list = new DoublyLinkedList();
+    });
 
-  it('should append elements to the end of the list', () => {
-    list.append(1);
-    list.append(2);
-    expect(list.get(0).data).toBe(1);
-    expect(list.get(1).data).toBe(2);
-  });
+    it('should append elements to the end of the list', () => {
+        list.append(1);
+        list.append(2);
+        expect(list.get(0).data).toBe(1);
+        expect(list.get(1).data).toBe(2);
+    });
 
-  it('should prepend elements to the beginning of the list', () => {
-    list.prepend(1);
-    list.prepend(2);
-    expect(list.get(0).data).toBe(2);
-    expect(list.get(1).data).toBe(1);
-  });
+    it('should prepend elements to the beginning of the list', () => {
+        list.prepend(1);
+        list.prepend(2);
+        expect(list.get(0).data).toBe(2);
+        expect(list.get(1).data).toBe(1);
+    });
 
-  it('should insert elements at a specific index', () => {
-    list.append(1);
-    list.append(3);
-    list.insert(1, 2);
-    expect(list.get(0).data).toBe(1);
-    expect(list.get(1).data).toBe(2);
-    expect(list.get(2).data).toBe(3);
-  });
+    it('should insert elements at a specific index', () => {
+        list.append(1);
+        list.append(3);
+        list.insert(1, 2);
+        expect(list.get(0).data).toBe(1);
+        expect(list.get(1).data).toBe(2);
+        expect(list.get(2).data).toBe(3);
+    });
 
-  it('should remove elements from the list', () => {
-    list.append(1);
-    list.append(2);
-    list.append(3);
-    list.remove(2);
-    expect(list.get(0).data).toBe(1);
-    expect(list.get(1).data).toBe(3);
-  });
+    it('should remove elements from the list', () => {
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.remove(2);
+        expect(list.get(0).data).toBe(1);
+        expect(list.get(1).data).toBe(3);
+    });
 
-  it('should return null for invalid indices', () => {
-    list.append(1);
-    expect(list.get(-1)).toBe(null);
-    expect(list.get(1)).toBe(null);
-  });
+    it('should return null for invalid indices', () => {
+        list.append(1);
+        expect(list.get(-1)).toBe(null);
+        expect(list.get(1)).toBe(null);
+    });
 
-  it('should have the correct length after operations', () => {
-    expect(list.length).toBe(0);
-    list.append(1);
-    expect(list.length).toBe(1);
-    list.prepend(2);
-    expect(list.length).toBe(2);
-    list.remove(1);
-    expect(list.length).toBe(1);
-    list.remove(2);
-    expect(list.length).toBe(0);
-  });
+    it('should have the correct length after operations', () => {
+        expect(list.length).toBe(0);
+        list.append(1);
+        expect(list.length).toBe(1);
+        list.prepend(2);
+        expect(list.length).toBe(2);
+        list.remove(1);
+        expect(list.length).toBe(1);
+        list.remove(2);
+        expect(list.length).toBe(0);
+    });
 
-  it('should handle inserting at the beginning and end correctly', () => {
-    list.insert(0, 1);
-    list.insert(1, 2);
-    expect(list.get(0).data).toBe(1);
-    expect(list.get(1).data).toBe(2);
-  });
+    it('should handle inserting at the beginning and end correctly', () => {
+        list.insert(0, 1);
+        list.insert(1, 2);
+        expect(list.get(0).data).toBe(1);
+        expect(list.get(1).data).toBe(2);
+    });
 
-  it('should return true when an item is successfully removed', () => {
-    list.append(1);
-    list.append(2);
-    expect(list.remove(2)).toBe(true);
-  });
+    it('should return true when an item is successfully removed', () => {
+        list.append(1);
+        list.append(2);
+        expect(list.remove(2)).toBe(true);
+    });
 
-  it('should return false when removing an item not in the list', () => {
-    list.append(1);
-    expect(list.remove(2)).toBe(false);
-  });
+    it('should return false when removing an item not in the list', () => {
+        list.append(1);
+        expect(list.remove(2)).toBe(false);
+    });
 });
 ```

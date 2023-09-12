@@ -26,12 +26,12 @@ power(3, 4); // 81 (3^4 = 3 * 3 * 3 * 3 = 81)
 
 ### Constraints
 
-- The base and exponent will always be positive integers
+-   The base and exponent will always be positive integers
 
 ### Hints
 
-- Remember that any number raised to the power of 0 is 1. This should give you the base case
-- Think about how you can break down the problem into smaller parts using recursion
+-   Remember that any number raised to the power of 0 is 1. This should give you the base case
+-   Think about how you can break down the problem into smaller parts using recursion
 
 ## Solutions
 
@@ -40,18 +40,18 @@ power(3, 4); // 81 (3^4 = 3 * 3 * 3 * 3 = 81)
 
 ```js
 function power(base, exponent) {
-  if (exponent === 0) {
-    return 1;
-  } else {
-    return base * power(base, exponent - 1);
-  }
+    if (exponent === 0) {
+        return 1;
+    } else {
+        return base * power(base, exponent - 1);
+    }
 }
 ```
 
 ### Explanation
 
-- The base case of the recursion is when the exponent is 0. In this case, we return 1 because any number raised to the power of 0 is 1.
-- For any other value of exponent, we break down the problem into smaller parts. To raise the base to the power of exponent, we can start by multiplying the base by the result of the function called with the same base and the exponent decremented by 1. This recursive step forms the essence of the algorithm, as it continually reduces the problem until it reaches the base case.
+-   The base case of the recursion is when the exponent is 0. In this case, we return 1 because any number raised to the power of 0 is 1.
+-   For any other value of exponent, we break down the problem into smaller parts. To raise the base to the power of exponent, we can start by multiplying the base by the result of the function called with the same base and the exponent decremented by 1. This recursive step forms the essence of the algorithm, as it continually reduces the problem until it reaches the base case.
 
 Let's us `power(2, 5)` and look at the exact steps including reaching the base case and unwinding and cycling through the returns:
 
@@ -88,8 +88,8 @@ return 16 * 2 = 32
 
 ```js
 test('Calculate Power of Base to Exponent', () => {
-  expect(power(2, 3)).toEqual(8);
-  expect(power(5, 2)).toEqual(25);
-  expect(power(3, 4)).toEqual(81);
+    expect(power(2, 3)).toEqual(8);
+    expect(power(5, 2)).toEqual(25);
+    expect(power(3, 4)).toEqual(81);
 });
 ```

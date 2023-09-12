@@ -4,7 +4,7 @@
 
 Write a function called `isValidBST` that takes in the following parameters:
 
-- `root` - The root/current node of a binary tree.
+-   `root` - The root/current node of a binary tree.
 
 The function should return a boolean indicating whether the binary tree is a valid binary search tree (BST).
 
@@ -16,11 +16,11 @@ Here's the definition of the binary tree node:
 
 ```js
 class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
 }
 ```
 
@@ -69,8 +69,8 @@ function isValidBST(
 
 ### Hints
 
-- You can solve this problem using a depth-first traversal approach.
-- Use recursion to explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
+-   You can solve this problem using a depth-first traversal approach.
+-   Use recursion to explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
 
 ## Solutions
 
@@ -79,29 +79,23 @@ function isValidBST(
 
 ```js
 class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 function isValidBST(root, min = null, max = null) {
-  if (!root) {
-    return true;
-  }
+    if (!root) {
+        return true;
+    }
 
-  if (
-    (min !== null && root.value <= min) ||
-    (max !== null && root.value >= max)
-  ) {
-    return false;
-  }
+    if ((min !== null && root.value <= min) || (max !== null && root.value >= max)) {
+        return false;
+    }
 
-  return (
-    isValidBST(root.left, min, root.value) &&
-    isValidBST(root.right, root.value, max)
-  );
+    return isValidBST(root.left, min, root.value) && isValidBST(root.right, root.value, max);
 }
 ```
 
@@ -109,11 +103,11 @@ function isValidBST(root, min = null, max = null) {
 
 The solution to this problem is to use a depth-first traversal approach to recursively explore the left and right subtrees of each node and check if the current node's value is within the valid range based on its position in the binary search tree.
 
-- Check if the current node is `null`. If it is, return `true` because an empty tree is a valid binary search tree.
-- Check if the current node's value is less than or equal to the `min` value or greater than or equal to the `max` value. If it is, return `false` because the current node's value is not within the valid range based on its position in the binary search tree.
-- Recursively call the `isValidBST` function on the current node's left subtree, passing in the `min` value and the current node's value as the `max` value.
-- Recursively call the `isValidBST` function on the current node's right subtree, passing in the current node's value as the `min` value and the `max` value.
-- If the current node's value is within the valid range based on its position in the binary search tree and both the left and right subtrees are valid binary search trees, return `true`. Otherwise, return `false`.
+-   Check if the current node is `null`. If it is, return `true` because an empty tree is a valid binary search tree.
+-   Check if the current node's value is less than or equal to the `min` value or greater than or equal to the `max` value. If it is, return `false` because the current node's value is not within the valid range based on its position in the binary search tree.
+-   Recursively call the `isValidBST` function on the current node's left subtree, passing in the `min` value and the current node's value as the `max` value.
+-   Recursively call the `isValidBST` function on the current node's right subtree, passing in the current node's value as the `min` value and the `max` value.
+-   If the current node's value is within the valid range based on its position in the binary search tree and both the left and right subtrees are valid binary search trees, return `true`. Otherwise, return `false`.
 
 ### Try It Out
 
@@ -154,37 +148,36 @@ console.log(isValidBST(root));
 const { Node, isValidBST } = require('./validate-bst');
 
 describe('isValidBST', () => {
-  it('should return true for a valid binary search tree', () => {
-    const root = new Node(8);
-    const node4 = new Node(4);
-    const node10 = new Node(10);
-    const node2 = new Node(2);
-    const node6 = new Node(6);
+    it('should return true for a valid binary search tree', () => {
+        const root = new Node(8);
+        const node4 = new Node(4);
+        const node10 = new Node(10);
+        const node2 = new Node(2);
+        const node6 = new Node(6);
 
-    root.left = node4;
-    root.right = node10;
-    node4.left = node2;
-    node4.right = node6;
+        root.left = node4;
+        root.right = node10;
+        node4.left = node2;
+        node4.right = node6;
 
-    const result = isValidBST(root);
-    expect(result).toBe(true);
-  });
+        const result = isValidBST(root);
+        expect(result).toBe(true);
+    });
 
-  it('should return false for an invalid binary search tree', () => {
-    const root = new Node(8);
-    const node4 = new Node(4);
-    const node10 = new Node(10);
-    const node2 = new Node(2);
-    const node12 = new Node(12);
+    it('should return false for an invalid binary search tree', () => {
+        const root = new Node(8);
+        const node4 = new Node(4);
+        const node10 = new Node(10);
+        const node2 = new Node(2);
+        const node12 = new Node(12);
 
-    root.left = node4;
-    root.right = node10;
-    node4.left = node2;
-    node4.right = node12;
+        root.left = node4;
+        root.right = node10;
+        node4.left = node2;
+        node4.right = node12;
 
-    const result = isValidBST(root);
-    expect(result).toBe(false);
-  });
+        const result = isValidBST(root);
+        expect(result).toBe(false);
+    });
 });
-
 ```

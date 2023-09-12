@@ -25,12 +25,12 @@ reverseString('') // ''
 
 ### Constraints
 
-- The input string will only contain lowercase letters and spaces
+-   The input string will only contain lowercase letters and spaces
 
 ### Hints
 
-- You can also do this without using any of the built-in methods and just use a for loop.
-- You could also use the methods `split`, `reverse`, and `join` to solve this problem.
+-   You can also do this without using any of the built-in methods and just use a for loop.
+-   You could also use the methods `split`, `reverse`, and `join` to solve this problem.
 
 ## Solutions
 
@@ -41,22 +41,22 @@ This solution uses a for loop to reverse the string.
 
 ```js
 function reverseString(str) {
-  let reversed = '';
+    let reversed = '';
 
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversed += str[i];
-  }
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
 
-  return reversed;
+    return reversed;
 }
 ```
 
 ## Explanation
 
-- Create a variable called `reversed` and set it equal to an empty string.
-- Create a for loop that starts at the last index of `str` and decrements by 1 until it reaches 0.
-- Add the character at the current index to the `reversed` variable.
-- Return the `reversed` variable.
+-   Create a variable called `reversed` and set it equal to an empty string.
+-   Create a for loop that starts at the last index of `str` and decrements by 1 until it reaches 0.
+-   Add the character at the current index to the `reversed` variable.
+-   Return the `reversed` variable.
 
 </details>
 
@@ -67,7 +67,7 @@ This solution uses built-in methods to reverse the string.
 
 ```js
 function reverseString(str) {
-  return str.split('').reverse().join('');
+    return str.split('').reverse().join('');
 }
 ```
 

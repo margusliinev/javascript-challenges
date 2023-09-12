@@ -5,7 +5,7 @@
 */
 
 function accessElement(arr, index) {
-  return arr[index];
+    return arr[index];
 }
 
 const arr1 = [1, 2, 3, 4, 5];

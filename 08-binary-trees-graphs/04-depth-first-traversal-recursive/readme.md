@@ -10,11 +10,11 @@ The `Node` class is provided for you:
 
 ```js
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }
 ```
 
@@ -35,8 +35,8 @@ depthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
 
 ### Hints
 
-- You can implement the depth-first traversal recursively using a helper function that is called on the left and right subtrees of the current node.
-- The base case is when the node is `null`, in which case we simply return from the function.
+-   You can implement the depth-first traversal recursively using a helper function that is called on the left and right subtrees of the current node.
+-   The base case is when the node is `null`, in which case we simply return from the function.
 
 ## Solutions
 
@@ -45,38 +45,38 @@ depthFirstTraversal(root); // should return ['a', 'b', 'd', 'e', 'c', 'f']
 
 ```js
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 function recDepthFirstTraversal(root) {
-  const result = [];
+    const result = [];
 
-  function traverse(node) {
-    if (node !== null) {
-      result.push(node.data);
-      traverse(node.left);
-      traverse(node.right);
+    function traverse(node) {
+        if (node !== null) {
+            result.push(node.data);
+            traverse(node.left);
+            traverse(node.right);
+        }
     }
-  }
 
-  traverse(root);
-  return result;
+    traverse(root);
+    return result;
 }
 ```
 
 ### Explanation
 
-- Initialize an empty array called `result` to store the nodes visited in depth-first order.
-- Define a helper function called `traverse` that takes in a node as input.
-- If the node is not `null`, push the node's data to the `result` array.
-- Call `traverse` on the left subtree of the current node.
-- Call `traverse` on the right subtree of the current node.
-- Call `traverse` on the root node to start the traversal.
-- Return the `result` array.
+-   Initialize an empty array called `result` to store the nodes visited in depth-first order.
+-   Define a helper function called `traverse` that takes in a node as input.
+-   If the node is not `null`, push the node's data to the `result` array.
+-   Call `traverse` on the left subtree of the current node.
+-   Call `traverse` on the right subtree of the current node.
+-   Call `traverse` on the root node to start the traversal.
+-   Return the `result` array.
 
 </details>
 
@@ -100,6 +100,6 @@ root.left.right = new Node('e');
 root.right.left = new Node('f');
 
 test('Depth First Traversal', () => {
-  expect(depthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
+    expect(depthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
 });
 ```

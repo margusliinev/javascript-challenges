@@ -20,18 +20,18 @@ Data structures and algorithms go hand in hand. An algorithm is a set of instruc
 
 These are some of the most common data structures that you'll see in programming. We'll be looking at each of these in this course.
 
-- Arrays
-- Objects
-- Maps
-- Sets
-- Stacks
-- Queues
-- Linked Lists
-- Trees
-- Binary Trees
-- Binary Search Trees (BST)
-- Graphs
-- Hash Tables
+-   Arrays
+-   Objects
+-   Maps
+-   Sets
+-   Stacks
+-   Queues
+-   Linked Lists
+-   Trees
+-   Binary Trees
+-   Binary Search Trees (BST)
+-   Graphs
+-   Hash Tables
 
 ## Linear vs Non-Linear Data Structures
 

@@ -14,9 +14,9 @@ Then use that class to create the following binary tree:
 
 ### Hints
 
-- The constructor will take a `value` parameter.
-- Initialize the `left` and `right` properties to `null` in the constructor.
-- Create an instance for each node in the tree and assign the appropriate values to the `left` and `right` properties.
+-   The constructor will take a `value` parameter.
+-   Initialize the `left` and `right` properties to `null` in the constructor.
+-   Create an instance for each node in the tree and assign the appropriate values to the `left` and `right` properties.
 
 ## Solutions
 
@@ -25,11 +25,11 @@ Then use that class to create the following binary tree:
 
 ```js
 class TreeNode {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 const a = new TreeNode('a');
@@ -48,10 +48,10 @@ c.right = f;
 
 ### Explanation
 
-- Create the `TreeNode` class with a constructor that takes a `value` parameter.
-- Initialize the `left` and `right` properties to `null`. This is because we don't know what the left and right children will be when we create the node. We will assign them later.
-- Create an instance of the `TreeNode` class for each node in the tree.
-- Assign the appropriate values to the `left` and `right` properties.
+-   Create the `TreeNode` class with a constructor that takes a `value` parameter.
+-   Initialize the `left` and `right` properties to `null`. This is because we don't know what the left and right children will be when we create the node. We will assign them later.
+-   Create an instance of the `TreeNode` class for each node in the tree.
+-   Assign the appropriate values to the `left` and `right` properties.
 
 The code above implements exactly what we see in the diagram.
 

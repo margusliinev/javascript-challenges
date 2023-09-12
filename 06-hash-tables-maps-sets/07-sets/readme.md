@@ -97,7 +97,7 @@ To loop through a set, we can use the `for...of` loop. Let's loop through the `n
 
 ```js
 for (const value of nameSet) {
-  console.log(value);
+    console.log(value);
 }
 ```
 

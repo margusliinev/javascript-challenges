@@ -17,11 +17,11 @@ Here is an object that you can use to test your function in the run file:
 
 ```js
 const cars = [
-  { make: 'Toyota', model: 'Camry', year: 2020, mileage: 30800 },
-  { make: 'Honda', model: 'Civic', year: 2019, mileage: 32000 },
-  { make: 'Chevrolet', model: 'Impala', year: 2021, mileage: 17500 },
-  { make: 'Audi', model: 'R8', year: 2020, mileage: 13000 },
-  { make: 'Tesla', model: 'Model 3', year: 2018, mileage: 50000 },
+    { make: 'Toyota', model: 'Camry', year: 2020, mileage: 30800 },
+    { make: 'Honda', model: 'Civic', year: 2019, mileage: 32000 },
+    { make: 'Chevrolet', model: 'Impala', year: 2021, mileage: 17500 },
+    { make: 'Audi', model: 'R8', year: 2020, mileage: 13000 },
+    { make: 'Tesla', model: 'Model 3', year: 2018, mileage: 50000 },
 ];
 ```
 
@@ -38,18 +38,18 @@ function analyzeCarMileage(cars: object[]): object;
 
 Each car object will have the following properties:
 
-- `make`: The make of the car (string).
-- `model`: The model of the car (string).
-- `year`: The year the car was manufactured (number).
-- `mileage`: The mileage of the car (number).
+-   `make`: The make of the car (string).
+-   `model`: The model of the car (string).
+-   `year`: The year the car was manufactured (number).
+-   `mileage`: The mileage of the car (number).
 
 ### Examples
 
 ```js
 const cars = [
-  { make: 'Toyota', model: 'Corolla', year: 2020, mileage: 25000 },
-  { make: 'Honda', model: 'Civic', year: 2019, mileage: 30000 },
-  { make: 'Ford', model: 'Mustang', year: 2021, mileage: 15000 },
+    { make: 'Toyota', model: 'Corolla', year: 2020, mileage: 25000 },
+    { make: 'Honda', model: 'Civic', year: 2019, mileage: 30000 },
+    { make: 'Ford', model: 'Mustang', year: 2021, mileage: 15000 },
 ];
 
 const analysis = analyzeCarMileage(cars);
@@ -65,13 +65,13 @@ console.log(analysis);
 
 ### Constraints
 
-- The input array `cars` will contain at most 100 car objects.
-- Each car object's `mileage` property will be a positive integer.
-- Result should be rounded to 2 decimal places.
+-   The input array `cars` will contain at most 100 car objects.
+-   Each car object's `mileage` property will be a positive integer.
+-   Result should be rounded to 2 decimal places.
 
 ### Hints
 
-- You can use the `reduce` method for most of the calculations.
+-   You can use the `reduce` method for most of the calculations.
 
 ## Solution
 
@@ -80,41 +80,32 @@ console.log(analysis);
 
 ```js
 function analyzeCarMileage(cars) {
-  const totalMileage = cars.reduce((sum, car) => sum + car.mileage, 0);
-  const averageMileage = totalMileage / cars.length;
-  const highestMileageCar = cars.reduce(
-    (highest, car) => (car.mileage > highest.mileage ? car : highest),
-    cars[0]
-  );
-  const lowestMileageCar = cars.reduce(
-    (lowest, car) => (car.mileage < lowest.mileage ? car : lowest),
-    cars[0]
-  );
+    const totalMileage = cars.reduce((sum, car) => sum + car.mileage, 0);
+    const averageMileage = totalMileage / cars.length;
+    const highestMileageCar = cars.reduce((highest, car) => (car.mileage > highest.mileage ? car : highest), cars[0]);
+    const lowestMileageCar = cars.reduce((lowest, car) => (car.mileage < lowest.mileage ? car : lowest), cars[0]);
 
-  return {
-    averageMileage: parseFloat(averageMileage.toFixed(2)),
-    highestMileageCar,
-    lowestMileageCar,
-    totalMileage,
-  };
+    return {
+        averageMileage: parseFloat(averageMileage.toFixed(2)),
+        highestMileageCar,
+        lowestMileageCar,
+        totalMileage,
+    };
 }
 ```
 
 ### Explanation
 
-- Create a variable `totalMileage` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the sum of the accumulator and the car's mileage. The initial value of `0` will be used as the initial value of the accumulator.
-- Create a variable `averageMileage` and initialize it to the result of dividing `totalMileage` by the length of the `cars` array.
-- Create a variable `highestMileageCar` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the car with the highest mileage. The initial value of `cars[0]` will be used as the initial value of the accumulator.
-- Create a variable `lowestMileageCar` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the car with the lowest mileage. The initial value of `cars[0]` will be used as the initial value of the accumulator.
-- Return an object containing the calculated values. Round the `averageMileage` to 2 decimal places using the `toFixed` method and convert it to a number using the `parseFloat` method.
+-   Create a variable `totalMileage` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the sum of the accumulator and the car's mileage. The initial value of `0` will be used as the initial value of the accumulator.
+-   Create a variable `averageMileage` and initialize it to the result of dividing `totalMileage` by the length of the `cars` array.
+-   Create a variable `highestMileageCar` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the car with the highest mileage. The initial value of `cars[0]` will be used as the initial value of the accumulator.
+-   Create a variable `lowestMileageCar` and initialize it to the result of calling the `reduce` method on the `cars` array. The accumulator should be the car with the lowest mileage. The initial value of `cars[0]` will be used as the initial value of the accumulator.
+-   Return an object containing the calculated values. Round the `averageMileage` to 2 decimal places using the `toFixed` method and convert it to a number using the `parseFloat` method.
 
 I know that `reduce` can be a little tough to understand, so let's really break it down for the `highestMileageCar` variable. Here is the code again for reference:
 
 ```js
-const highestMileageCar = cars.reduce(
-  (highest, car) => (car.mileage > highest.mileage ? car : highest),
-  cars[0]
-);
+const highestMileageCar = cars.reduce((highest, car) => (car.mileage > highest.mileage ? car : highest), cars[0]);
 ```
 
 1. `reduce` takes two main arguments: a function and an initial value. The initial value is set to `cars[0]`, which is the first car in the list.
@@ -132,28 +123,28 @@ Whatever we return from the callback for the `reduce` method will be the new val
 
 ```js
 test('Analyzing Car Mileage Data', () => {
-  const cars = [
-    { make: 'Toyota', model: 'Corolla', year: 2020, mileage: 25000 },
-    { make: 'Honda', model: 'Civic', year: 2019, mileage: 30000 },
-    { make: 'Ford', model: 'Mustang', year: 2021, mileage: 15000 },
-  ];
+    const cars = [
+        { make: 'Toyota', model: 'Corolla', year: 2020, mileage: 25000 },
+        { make: 'Honda', model: 'Civic', year: 2019, mileage: 30000 },
+        { make: 'Ford', model: 'Mustang', year: 2021, mileage: 15000 },
+    ];
 
-  const analysis = analyzeCarMileage(cars);
+    const analysis = analyzeCarMileage(cars);
 
-  expect(analysis.averageMileage).toBeCloseTo(23333.33);
-  expect(analysis.highestMileageCar).toEqual({
-    make: 'Honda',
-    model: 'Civic',
-    year: 2019,
-    mileage: 30000,
-  });
-  expect(analysis.lowestMileageCar).toEqual({
-    make: 'Ford',
-    model: 'Mustang',
-    year: 2021,
-    mileage: 15000,
-  });
-  expect(analysis.totalMileage).toBe(70000);
+    expect(analysis.averageMileage).toBeCloseTo(23333.33);
+    expect(analysis.highestMileageCar).toEqual({
+        make: 'Honda',
+        model: 'Civic',
+        year: 2019,
+        mileage: 30000,
+    });
+    expect(analysis.lowestMileageCar).toEqual({
+        make: 'Ford',
+        model: 'Mustang',
+        year: 2021,
+        mileage: 15000,
+    });
+    expect(analysis.totalMileage).toBe(70000);
 });
 ```
 

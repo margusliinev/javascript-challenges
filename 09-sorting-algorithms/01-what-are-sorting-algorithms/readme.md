@@ -14,10 +14,10 @@ Efficiency in an algorithm is defined in terms of the `time complexity` and `spa
 
 Sorting algorithm performance can be classified by:
 
-- `Best case` complexity: the minimum possible number of operations required to sort the data.
-- `Average case` complexity: the average number of operations required to sort the data.
-- `Worst case` complexity: the maximum number of operations required to sort the data.
-- `Memory usage`: the amount of memory space required to sort the data.
+-   `Best case` complexity: the minimum possible number of operations required to sort the data.
+-   `Average case` complexity: the average number of operations required to sort the data.
+-   `Worst case` complexity: the maximum number of operations required to sort the data.
+-   `Memory usage`: the amount of memory space required to sort the data.
 
 These are expressed using `Big O notation`, which we've also talked about.
 
@@ -25,22 +25,22 @@ These are expressed using `Big O notation`, which we've also talked about.
 
 There are many different types of sorting algorithms. We're going to look at the most common ones in the next few sections. Here is an overview of the ones we'll be looking at:
 
-- `Bubble sort`
-- `Selection sort`
-- `Insertion sort`
-- `Merge sort`
-- `Quick sort`
-- `Heap sort`
-- `Radix sort`
+-   `Bubble sort`
+-   `Selection sort`
+-   `Insertion sort`
+-   `Merge sort`
+-   `Quick sort`
+-   `Heap sort`
+-   `Radix sort`
 
 I will go over these in detail in the next few sections.
 
 Strategies for sorting:
 
-- Recursion - Recursion can be used in sorting algorithms. We know that recursion is when a function calls itself with a smaller version of the input. We'll see how this can be used in sorting algorithms.
+-   Recursion - Recursion can be used in sorting algorithms. We know that recursion is when a function calls itself with a smaller version of the input. We'll see how this can be used in sorting algorithms.
 
-- Divide and conquer - A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem. This is very similar to recursion. We'll see how this can be used in sorting algorithms.
+-   Divide and conquer - A divide and conquer algorithm works by recursively breaking down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem. This is very similar to recursion. We'll see how this can be used in sorting algorithms.
 
-- In-place sorting - An in-place sorting algorithm uses constant extra space for producing the output (modifies the given array only to produce the sorted array). It sorts the list only by modifying the order of the elements within the list. We'll see how this can be used in sorting algorithms.
+-   In-place sorting - An in-place sorting algorithm uses constant extra space for producing the output (modifies the given array only to produce the sorted array). It sorts the list only by modifying the order of the elements within the list. We'll see how this can be used in sorting algorithms.
 
 Let's jump right in and look at the first sorting algorithm, `Bubble sort` in the next lesson.

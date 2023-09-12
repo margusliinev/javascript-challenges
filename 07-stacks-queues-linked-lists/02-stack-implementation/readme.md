@@ -8,11 +8,11 @@ Let's start by creating a class called `Stack`. In the constructor, we'll create
 
 ```js
 class Stack {
-  constructor() {
-    this.maxSize = 100;
-    this.stack = [];
-    this.top = -1;
-  }
+    constructor() {
+        this.maxSize = 100;
+        this.stack = [];
+        this.top = -1;
+    }
 }
 ```
 

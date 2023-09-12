@@ -26,7 +26,7 @@ numberRange(7, 7); // should return [7] (only one number)
 
 ### Hints
 
-- You can construct the array by first calling `numberRange` on a smaller range and then adding the `endNum` to the array.
+-   You can construct the array by first calling `numberRange` on a smaller range and then adding the `endNum` to the array.
 
 ## Solutions
 
@@ -35,21 +35,21 @@ numberRange(7, 7); // should return [7] (only one number)
 
 ```js
 function numberRange(startNum, endNum) {
-  if (startNum === endNum) {
-    return [startNum];
-  }
+    if (startNum === endNum) {
+        return [startNum];
+    }
 
-  const numbers = numberRange(startNum, endNum - 1);
-  numbers.push(endNum);
-  return numbers;
+    const numbers = numberRange(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
 }
 ```
 
 ### Explanation
 
-- We first add our base case and check if the `startNum` is equal to the `endNum`. If so, we return the `startNum` in an array.
-- For the recursive case, we set the variable `numbers` to the function with the startNum and one less than the `endNum`.
-- Then we add the `endNum` to the `numbers` array and return it.
+-   We first add our base case and check if the `startNum` is equal to the `endNum`. If so, we return the `startNum` in an array.
+-   For the recursive case, we set the variable `numbers` to the function with the startNum and one less than the `endNum`.
+-   Then we add the `endNum` to the `numbers` array and return it.
 
 That is the gist of it, but let's go step by step for `numberRange(1, 5)`
 
@@ -69,8 +69,8 @@ The function follows the same recursive process to build the array of numbers, s
 
 ```js
 test('Calculating the range of numbers', () => {
-  expect(numberRange(1, 5)).toEqual([1, 2, 3, 4, 5]);
-  expect(numberRange(3, 10)).toEqual([3, 4, 5, 6, 7, 8, 9, 10]);
-  expect(numberRange(7, 7)).toEqual([7]);
+    expect(numberRange(1, 5)).toEqual([1, 2, 3, 4, 5]);
+    expect(numberRange(3, 10)).toEqual([3, 4, 5, 6, 7, 8, 9, 10]);
+    expect(numberRange(7, 7)).toEqual([7]);
 });
 ```

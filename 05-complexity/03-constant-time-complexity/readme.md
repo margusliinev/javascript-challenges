@@ -6,7 +6,7 @@ Let's look at an example of a constant time O(1) function.
 
 ```js
 function accessElement(arr, index) {
-  return arr[index];
+    return arr[index];
 }
 ```
 
@@ -16,7 +16,7 @@ We can test this in VS Code by adding the following to a .js file:
 
 ```js
 function accessElement(arr, index) {
-  return arr[index];
+    return arr[index];
 }
 
 const arr1 = [1, 2, 3, 4, 5];

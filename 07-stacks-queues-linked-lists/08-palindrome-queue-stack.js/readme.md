@@ -29,10 +29,10 @@ isPalindromeQueueStack('A man, a plan, a canal: Panama'); // true
 
 ### Hints
 
-- Remove all non-alphanumeric characters from the string
-- Enqueue and push the characters of the string into the queue and stack respectively
-- Dequeue and pop the characters from the queue and stack respectively
-- Compare the characters from the queue and stack
+-   Remove all non-alphanumeric characters from the string
+-   Enqueue and push the characters of the string into the queue and stack respectively
+-   Dequeue and pop the characters from the queue and stack respectively
+-   Compare the characters from the queue and stack
 
 ## Solutions
 
@@ -41,34 +41,34 @@ isPalindromeQueueStack('A man, a plan, a canal: Panama'); // true
 
 ```js
 function isPalindromeQueueStack(str) {
-  const formattedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    const formattedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 
-  const charQueue = new Queue();
-  const charStack = new Stack();
+    const charQueue = new Queue();
+    const charStack = new Stack();
 
-  for (let i = 0; i < formattedStr.length; i++) {
-    const char = formattedStr.charAt(i);
-    charQueue.enqueue(char);
-    charStack.push(char);
-  }
-
-  while (!charQueue.isEmpty()) {
-    if (charQueue.dequeue() !== charStack.pop()) {
-      return false;
+    for (let i = 0; i < formattedStr.length; i++) {
+        const char = formattedStr.charAt(i);
+        charQueue.enqueue(char);
+        charStack.push(char);
     }
-  }
 
-  return true;
+    while (!charQueue.isEmpty()) {
+        if (charQueue.dequeue() !== charStack.pop()) {
+            return false;
+        }
+    }
+
+    return true;
 }
 ```
 
 ### Explanation
 
-- Remove all non-alphanumeric characters from the string and convert it to lowercase.
-- Create a `Queue` and a `Stack` to hold the characters of the string.
-- Iterate through the string and enqueue and push each character into the queue and stack respectively.
-- Check if the queue is empty. If it is not, dequeue and pop the characters from the queue and stack respectively and compare them. If they are not equal, return `false`.
-- If we make it through the entire string without returning `false`, return `true`.
+-   Remove all non-alphanumeric characters from the string and convert it to lowercase.
+-   Create a `Queue` and a `Stack` to hold the characters of the string.
+-   Iterate through the string and enqueue and push each character into the queue and stack respectively.
+-   Check if the queue is empty. If it is not, dequeue and pop the characters from the queue and stack respectively and compare them. If they are not equal, return `false`.
+-   If we make it through the entire string without returning `false`, return `true`.
 
 </details>
 
@@ -76,9 +76,9 @@ function isPalindromeQueueStack(str) {
 
 ```js
 test('Checking for palindrome strings', () => {
-  expect(isPalindromeQueueStack('racecar')).toBe(true);
-  expect(isPalindromeQueueStack('Hello')).toBe(false);
-  expect(isPalindromeQueueStack('A man, a plan, a canal, Panama')).toBe(true);
-  expect(isPalindromeQueueStack('12321')).toBe(true);
+    expect(isPalindromeQueueStack('racecar')).toBe(true);
+    expect(isPalindromeQueueStack('Hello')).toBe(false);
+    expect(isPalindromeQueueStack('A man, a plan, a canal, Panama')).toBe(true);
+    expect(isPalindromeQueueStack('12321')).toBe(true);
 });
 ```

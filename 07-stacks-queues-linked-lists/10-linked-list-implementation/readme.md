@@ -8,10 +8,10 @@ Before we create the linked list class, we need to create a node class. The node
 
 ```js
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
 }
 ```
 

@@ -1,19 +1,19 @@
 const nameMap = new Map([
-  [1, 'John'],
-  [2, 'Jane'],
-  [3, 'Joe'],
+    [1, 'John'],
+    [2, 'Jane'],
+    [3, 'Joe'],
 ]);
 
 const myFunction = () => {};
 const emptyObj = {};
 
 const map2 = new Map([
-  ['name', 'John'],
-  [1, 'number one'],
-  [true, 'really true'],
-  [null, 'null'],
-  [myFunction, 'empty function'],
-  [emptyObj, 'empty object'],
+    ['name', 'John'],
+    [1, 'number one'],
+    [true, 'really true'],
+    [null, 'null'],
+    [myFunction, 'empty function'],
+    [emptyObj, 'empty object'],
 ]);
 
 // Getting values
@@ -38,12 +38,12 @@ console.log(nameMap.size);
 
 // Iterating (for...of)
 for (let [key, value] of nameMap) {
-  console.log(key, value);
+    console.log(key, value);
 }
 
 // Using forEach
 nameMap.forEach((value, key) => {
-  console.log(key, value);
+    console.log(key, value);
 });
 
 // Looping keys and values

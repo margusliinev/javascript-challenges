@@ -10,11 +10,11 @@ Please do not make any PRs to this repo as it goes along with a specific course.
 
 Each folder includes:
 
-- `readme.md` - The challenge/code instructions. This also includes hints, tests and a dropdown with the solution code as well as the explanation of the solution code.
-- `[name].js` - This is your working file. It has the name of the function and the function is exported. No parameters are passed to the function. That is up to you to add.
-- `[name]-run.js` - File to run the code manually. The function is already imported and called with expected parameters.
-- `[name]-solution.js` The solution code with heavy commenting. Some challenges have multiple solutions. If you want the solution without comments, look in the `readme.md` file.
-- `[name]-test.js` - Jest tests for the solution code. You will need to rename this file to `[name].test.js` to run the tests.
+-   `readme.md` - The challenge/code instructions. This also includes hints, tests and a dropdown with the solution code as well as the explanation of the solution code.
+-   `[name].js` - This is your working file. It has the name of the function and the function is exported. No parameters are passed to the function. That is up to you to add.
+-   `[name]-run.js` - File to run the code manually. The function is already imported and called with expected parameters.
+-   `[name]-solution.js` The solution code with heavy commenting. Some challenges have multiple solutions. If you want the solution without comments, look in the `readme.md` file.
+-   `[name]-test.js` - Jest tests for the solution code. You will need to rename this file to `[name].test.js` to run the tests.
 
 ## Learning Modules/Lessons
 

@@ -25,15 +25,15 @@ findMissingNumber([10, 5, 1, 2, 4, 6, 8, 3, 9]); // 7
 
 ### Constraints
 
-- If an empty array is passed in, it should return `1`
-- If nothing is passed in, it should return `undefined`
+-   If an empty array is passed in, it should return `1`
+-   If nothing is passed in, it should return `undefined`
 
 ### Hints
 
-- Calculate the sum of the numbers from 1 to n (inclusive). The formula for this is `n * (n + 1) / 2`. `n` is the length of the array plus 1.
-- Calculate the sum of the numbers in the array.
-- Subtract the sum of the numbers in the array from the sum of the numbers from 1 to n (inclusive).
-- You could use a for loop or the reduce method to calculate the sum of the numbers in the array. We will be focusing on methods like reduce in the next section, but I will still show you both ways.
+-   Calculate the sum of the numbers from 1 to n (inclusive). The formula for this is `n * (n + 1) / 2`. `n` is the length of the array plus 1.
+-   Calculate the sum of the numbers in the array.
+-   Subtract the sum of the numbers in the array from the sum of the numbers from 1 to n (inclusive).
+-   You could use a for loop or the reduce method to calculate the sum of the numbers in the array. We will be focusing on methods like reduce in the next section, but I will still show you both ways.
 
 ## Solutions
 
@@ -42,33 +42,33 @@ findMissingNumber([10, 5, 1, 2, 4, 6, 8, 3, 9]); // 7
 
 ```js
 function findMissingNumber(arr) {
-  if (!arr || arr.length === 0) {
-    return undefined;
-  }
+    if (!arr || arr.length === 0) {
+        return undefined;
+    }
 
-  const n = arr.length + 1;
-  const expectedSum = (n * (n + 1)) / 2;
+    const n = arr.length + 1;
+    const expectedSum = (n * (n + 1)) / 2;
 
-  let actualSum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    actualSum += arr[i];
-  }
+    let actualSum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        actualSum += arr[i];
+    }
 
-  return expectedSum - actualSum;
+    return expectedSum - actualSum;
 }
 
 // Using reduce
 function findMissingNumber(arr) {
-  if (!arr || arr.length === 0) {
-    return undefined;
-  }
+    if (!arr || arr.length === 0) {
+        return undefined;
+    }
 
-  const n = arr.length + 1;
-  const expectedSum = (n * (n + 1)) / 2;
+    const n = arr.length + 1;
+    const expectedSum = (n * (n + 1)) / 2;
 
-  const actualSum = arr.reduce((sum, num) => sum + num, 0);
+    const actualSum = arr.reduce((sum, num) => sum + num, 0);
 
-  return expectedSum - actualSum;
+    return expectedSum - actualSum;
 }
 ```
 
@@ -92,8 +92,8 @@ Again, you can use a for loop or the reduce method to calculate the sum of the n
 
 ```js
 test('Finding the missing number', () => {
-  expect(findMissingNumber([1, 2, 3, 5])).toBe(4);
-  expect(findMissingNumber([10, 8, 6, 7, 5, 4, 2, 3, 1])).toBe(9);
-  expect(findMissingNumber([1, 3, 4, 5, 6])).toBe(2);
+    expect(findMissingNumber([1, 2, 3, 5])).toBe(4);
+    expect(findMissingNumber([10, 8, 6, 7, 5, 4, 2, 3, 1])).toBe(9);
+    expect(findMissingNumber([1, 3, 4, 5, 6])).toBe(2);
 });
 ```

@@ -28,12 +28,12 @@ calculator(10, 5, '/') // 2
 
 ### Constraints
 
-- The function must return a number
-- The function must throw or log an error if an invalid operator is given
+-   The function must return a number
+-   The function must throw or log an error if an invalid operator is given
 
 ### Hints
 
-- You can use `if` statements or `switch` statements to determine which operator was given.
+-   You can use `if` statements or `switch` statements to determine which operator was given.
 
 ## Solutions
 
@@ -44,34 +44,34 @@ calculator(10, 5, '/') // 2
 
 ```js
 function calculator(num1, num2, operator) {
-  let result;
+    let result;
 
-  switch (operator) {
-    case '+':
-      result = num1 + num2;
-      break;
-    case '-':
-      result = num1 - num2;
-      break;
-    case '*':
-      result = num1 * num2;
-      break;
-    case '/':
-      result = num1 / num2;
-      break;
-    default:
-      throw new Error('Invalid operator');
-  }
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        default:
+            throw new Error('Invalid operator');
+    }
 
-  return result;
+    return result;
 }
 ```
 
 ### Explanation
 
-- Created a function called `calculator` that takes in three arguments: `num1`, `num2`, and `operator`.
-- Create a variable called `result` to store the result of the calculation.
-- Used a `switch` statement to determine which operator was given. If it was +, -, \* or /, we did the calculation. If the operator is anything else, we throw an error.
+-   Created a function called `calculator` that takes in three arguments: `num1`, `num2`, and `operator`.
+-   Create a variable called `result` to store the result of the calculation.
+-   Used a `switch` statement to determine which operator was given. If it was +, -, \* or /, we did the calculation. If the operator is anything else, we throw an error.
 
 </details>
 
@@ -82,29 +82,29 @@ function calculator(num1, num2, operator) {
 
 ```js
 function calculator(num1, num2, operator) {
-  let result;
+    let result;
 
-  if (operator === '+') {
-    result = num1 + num2;
-  } else if (operator === '-') {
-    result = num1 - num2;
-  } else if (operator === '*') {
-    result = num1 * num2;
-  } else if (operator === '/') {
-    result = num1 / num2;
-  } else {
-    throw new Error('Invalid operator');
-  }
+    if (operator === '+') {
+        result = num1 + num2;
+    } else if (operator === '-') {
+        result = num1 - num2;
+    } else if (operator === '*') {
+        result = num1 * num2;
+    } else if (operator === '/') {
+        result = num1 / num2;
+    } else {
+        throw new Error('Invalid operator');
+    }
 
-  return result;
+    return result;
 }
 ```
 
 ### Explanation
 
-- Create a function called `calculator` that takes in three arguments: `num1`, `num2`, and `operator`.
-- Create a variable called `result` to store the result of the calculation.
-- Use an `if` statement to determine which operator was given. If it was +, -, \* or /, we did the calculation. If the operator is anything else, we throw an error.
+-   Create a function called `calculator` that takes in three arguments: `num1`, `num2`, and `operator`.
+-   Create a variable called `result` to store the result of the calculation.
+-   Use an `if` statement to determine which operator was given. If it was +, -, \* or /, we did the calculation. If the operator is anything else, we throw an error.
 
  </details>
 
@@ -112,23 +112,23 @@ function calculator(num1, num2, operator) {
 
 ```js
 test('Performing arithmetic operations using the calculator function', () => {
-  // Test case inputs
-  const num1 = 5;
-  const num2 = 7;
+    // Test case inputs
+    const num1 = 5;
+    const num2 = 7;
 
-  // Addition
-  expect(calculator(num1, num2, '+')).toBe(12);
+    // Addition
+    expect(calculator(num1, num2, '+')).toBe(12);
 
-  // Subtraction
-  expect(calculator(num1, num2, '-')).toBe(-2);
+    // Subtraction
+    expect(calculator(num1, num2, '-')).toBe(-2);
 
-  // Multiplication
-  expect(calculator(num1, num2, '*')).toBe(35);
+    // Multiplication
+    expect(calculator(num1, num2, '*')).toBe(35);
 
-  // Division
-  expect(calculator(num1, num2, '/')).toBeCloseTo(0.7143, 4);
+    // Division
+    expect(calculator(num1, num2, '/')).toBeCloseTo(0.7143, 4);
 
-  // Invalid operator
-  expect(() => calculator(num1, num2, '^')).toThrow('Invalid operator');
+    // Invalid operator
+    expect(() => calculator(num1, num2, '^')).toThrow('Invalid operator');
 });
 ```

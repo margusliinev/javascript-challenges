@@ -29,11 +29,11 @@ getSum(10, 5) // 15
 
 ### Constraints
 
-- The function must return a number
+-   The function must return a number
 
 ### Hints
 
-- You can use the `+` operator to add two numbers together.
+-   You can use the `+` operator to add two numbers together.
 
 ## Solutions
 

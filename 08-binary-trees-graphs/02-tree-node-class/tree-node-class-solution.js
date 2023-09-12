@@ -1,12 +1,12 @@
 class TreeNode {
-  constructor(value) {
-    // The value of the node.
-    this.value = value;
-    // The left child of the node.
-    this.left = null;
-    // The right child of the node.
-    this.right = null;
-  }
+    constructor(value) {
+        // The value of the node.
+        this.value = value;
+        // The left child of the node.
+        this.left = null;
+        // The right child of the node.
+        this.right = null;
+    }
 }
 
 // Add a bunch of nodes to the tree.

@@ -6,4 +6,3 @@ const { Node, BinarySearchTree } = require('./binary-search-tree');
 //     5    15
 //    /
 //   2
-

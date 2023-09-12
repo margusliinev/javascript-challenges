@@ -5,6 +5,6 @@ class Node {}
 function depthFirstTraversal() {}
 
 module.exports = {
-  Node,
-  depthFirstTraversal,
+    Node,
+    depthFirstTraversal,
 };

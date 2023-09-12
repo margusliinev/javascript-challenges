@@ -37,11 +37,11 @@ Space complexity is O(n) because we have to store all of the keys and values in 
 
 Here are some of the methods that are available on a hash table:
 
-- `set(key, value)` - Adds a key-value pair to the hash table.
-- `get(key)` - Returns the value associated with a key.
-- `remove(key)` - Removes a key-value pair from the hash table.
-- `has(key)` - Returns true if the key exists in the hash table, false otherwise.
-- `keys()` - Returns an array of all the keys in the hash table.
-- `values()` - Returns an array of all the values in the hash table.
+-   `set(key, value)` - Adds a key-value pair to the hash table.
+-   `get(key)` - Returns the value associated with a key.
+-   `remove(key)` - Removes a key-value pair from the hash table.
+-   `has(key)` - Returns true if the key exists in the hash table, false otherwise.
+-   `keys()` - Returns an array of all the keys in the hash table.
+-   `values()` - Returns an array of all the values in the hash table.
 
 We will get to implementing our own custom hash table, but first I want to look at `maps` and `sets` in JavaScript.

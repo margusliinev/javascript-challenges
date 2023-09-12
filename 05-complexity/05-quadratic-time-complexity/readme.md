@@ -8,15 +8,15 @@ Let's look at an example of a quadratic time O(n^2) function.
 
 ```js
 function sumArray(arr) {
-  let sum = 0;
-  let sum2 = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    for (let j = 0; j < arr.length; j++) {
-      sum2 += arr[j];
+    let sum = 0;
+    let sum2 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        for (let j = 0; j < arr.length; j++) {
+            sum2 += arr[j];
+        }
     }
-  }
-  return sum + sum2;
+    return sum + sum2;
 }
 ```
 
@@ -38,15 +38,15 @@ You can test the runtime on your machine by running the following code:
 
 ```js
 function sumArray(arr) {
-  let sum = 0;
-  let sum2 = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    for (let j = 0; j < arr.length; j++) {
-      sum2 += arr[j];
+    let sum = 0;
+    let sum2 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        for (let j = 0; j < arr.length; j++) {
+            sum2 += arr[j];
+        }
     }
-  }
-  return sum + sum2;
+    return sum + sum2;
 }
 
 const arr1 = [1, 2, 3, 4, 5];

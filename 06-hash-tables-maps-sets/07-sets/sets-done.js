@@ -23,7 +23,7 @@ console.log(nameSet.values());
 
 // Iterate through set
 for (const name of nameSet) {
-  console.log(name);
+    console.log(name);
 }
 
 // Convert set to array

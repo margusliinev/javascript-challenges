@@ -5,6 +5,6 @@ class Node {}
 function breadthFirstTraversal() {}
 
 module.exports = {
-  Node,
-  breadthFirstTraversal,
+    Node,
+    breadthFirstTraversal,
 };

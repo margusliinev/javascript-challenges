@@ -6,11 +6,11 @@ Let's look at an example of a linear time O(n) function.
 
 ```js
 function sumArray(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
 }
 ```
 
@@ -20,11 +20,11 @@ Let's try it out.
 
 ```js
 function sumArray(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
 }
 
 const arr1 = [1, 2, 3, 4, 5];
@@ -80,7 +80,7 @@ Even something like this:
 
 ```js
 function reverseString(str) {
-  return str.split('').reverse().join('');
+    return str.split('').reverse().join('');
 }
 ```
 
@@ -94,24 +94,24 @@ Remember the dice game that we made? Let's look at the complexity of that. Here 
 
 ```js
 function diceGameSimulation() {
-  const rollDice = () => Math.floor(Math.random() * 6) + 1;
+    const rollDice = () => Math.floor(Math.random() * 6) + 1;
 
-  const initialSum = rollDice() + rollDice();
+    const initialSum = rollDice() + rollDice();
 
-  if (initialSum === 7 || initialSum === 11) {
-    return 'Win';
-  } else if (initialSum === 2 || initialSum === 3 || initialSum === 12) {
-    return 'Lose';
-  }
-
-  while (true) {
-    const newSum = rollDice() + rollDice();
-    if (newSum === 7 || newSum === 11) {
-      return 'Win';
-    } else if (newSum === initialSum) {
-      return 'Lose';
+    if (initialSum === 7 || initialSum === 11) {
+        return 'Win';
+    } else if (initialSum === 2 || initialSum === 3 || initialSum === 12) {
+        return 'Lose';
     }
-  }
+
+    while (true) {
+        const newSum = rollDice() + rollDice();
+        if (newSum === 7 || newSum === 11) {
+            return 'Win';
+        } else if (newSum === initialSum) {
+            return 'Lose';
+        }
+    }
 }
 ```
 
@@ -127,9 +127,9 @@ This function is `O(1)` because it does not depend on the input. It will always 
 const initialSum = rollDice() + rollDice();
 
 if (initialSum === 7 || initialSum === 11) {
-  return 'Win';
+    return 'Win';
 } else if (initialSum === 2 || initialSum === 3 || initialSum === 12) {
-  return 'Lose';
+    return 'Lose';
 }
 ```
 
@@ -137,12 +137,12 @@ This part is also `O(1)` because it does not depend on the input. It will always
 
 ```js
 while (true) {
-  const newSum = rollDice() + rollDice();
-  if (newSum === 7 || newSum === 11) {
-    return 'Win';
-  } else if (newSum === initialSum) {
-    return 'Lose';
-  }
+    const newSum = rollDice() + rollDice();
+    if (newSum === 7 || newSum === 11) {
+        return 'Win';
+    } else if (newSum === initialSum) {
+        return 'Lose';
+    }
 }
 ```
 

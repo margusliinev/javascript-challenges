@@ -28,10 +28,10 @@ We continue this process until the unsorted part becomes empty.
 
 ### Complexity & Efficiency
 
-- Worst-case time complexity: O(n^2)
-- Best-case time complexity: O(n^2)
-- Average-case time complexity: O(n^2)
-- Space complexity: O(1)
+-   Worst-case time complexity: O(n^2)
+-   Best-case time complexity: O(n^2)
+-   Average-case time complexity: O(n^2)
+-   Space complexity: O(1)
 
 Compared to a bubble sort, insertion sort requires less number of swaps, so it is slightly more efficient, especially when the array is partially sorted. However, it still has a time complexity of O(n<sup>2</sup>) because we still have to compare each element with all the other elements in the sorted part.
 

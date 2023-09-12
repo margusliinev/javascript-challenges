@@ -25,7 +25,7 @@ findMaxNumber([1, 2, 3, 4, 5, 10, 9, 8, 7, 6]); // 10
 
 ### Hints
 
-- There is a very easy way to do this using a specific built-in method. I would suggest not doing it that way. Try to solve this problem using a `for` loop.
+-   There is a very easy way to do this using a specific built-in method. I would suggest not doing it that way. Try to solve this problem using a `for` loop.
 
 ## Solutions
 
@@ -36,7 +36,7 @@ This is the easy way to do it. There is a method called `Math.max()` that will r
 
 ```js
 function findMaxNumber(arr) {
-  return Math.max(...arr);
+    return Math.max(...arr);
 }
 ```
 
@@ -53,24 +53,24 @@ Here is another way of solving it using a `for` loop.
 
 ```js
 function findMaxNumber(arr) {
-  let max = arr[0];
+    let max = arr[0];
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
     }
-  }
 
-  return max;
+    return max;
 }
 ```
 
 ### Explanation
 
-- Create a variable called `max` and setting it equal to the first element in the array.
-- Loop through the array starting at the second element.
-- Check if the current element is greater than the current value of `max`. If it is, we set `max` equal to the current element.
-- Return `max` after the loop is finished.
+-   Create a variable called `max` and setting it equal to the first element in the array.
+-   Loop through the array starting at the second element.
+-   Check if the current element is greater than the current value of `max`. If it is, we set `max` equal to the current element.
+-   Return `max` after the loop is finished.
 
 </details>
 
@@ -78,8 +78,8 @@ function findMaxNumber(arr) {
 
 ```js
 test('Finding the maximum number in an array', () => {
-  expect(findMaxNumber([1, 5, 3, 9, 2])).toBe(9);
-  expect(findMaxNumber([0, -1, -5, 2])).toBe(2);
-  expect(findMaxNumber([10, 10, 10, 10])).toBe(10);
+    expect(findMaxNumber([1, 5, 3, 9, 2])).toBe(9);
+    expect(findMaxNumber([0, -1, -5, 2])).toBe(2);
+    expect(findMaxNumber([10, 10, 10, 10])).toBe(10);
 });
 ```

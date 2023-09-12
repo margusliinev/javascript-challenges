@@ -1,6 +1,6 @@
 # What Is Space Complexity?
 
-Space complexity refers to the amount of memory or storage space that an algorithm or function consumes based on the size of its input. It measures how the memory usage of an algorithm scales with the size of the input data. The goal is to optimize memory usage and minimize the additional memory required during the execution of an algorithm or program. 
+Space complexity refers to the amount of memory or storage space that an algorithm or function consumes based on the size of its input. It measures how the memory usage of an algorithm scales with the size of the input data. The goal is to optimize memory usage and minimize the additional memory required during the execution of an algorithm or program.
 
 There are a lot of similarities between time and space complexity. We can use the same Big O notation to describe space complexity. We have constant, linear, quadratic, logarithmic, exponential, and factorial space complexity.
 
@@ -22,7 +22,7 @@ Let's take a look at some examples:
 
 ```js
 function add(num1, num2) {
-  return num1 + num2;
+    return num1 + num2;
 }
 ```
 
@@ -34,13 +34,13 @@ We can describe this function as `O(1)` in Big O notation.
 
 ```js
 function createArray(num) {
-  const arr = [];
+    const arr = [];
 
-  for (let i = 0; i < num; i++) {
-    arr.push(i);
-  }
+    for (let i = 0; i < num; i++) {
+        arr.push(i);
+    }
 
-  return arr;
+    return arr;
 }
 ```
 
@@ -52,17 +52,17 @@ We can describe this function as `O(n)` in Big O notation.
 
 ```js
 function createMatrix(num) {
-  const matrix = [];
+    const matrix = [];
 
-  for (let i = 0; i < num; i++) {
-    matrix[i] = [];
+    for (let i = 0; i < num; i++) {
+        matrix[i] = [];
 
-    for (let j = 0; j < num; j++) {
-      matrix[i][j] = i + j;
+        for (let j = 0; j < num; j++) {
+            matrix[i][j] = i + j;
+        }
     }
-  }
 
-  return matrix;
+    return matrix;
 }
 ```
 
@@ -74,17 +74,17 @@ We can describe this function as `O(n^2)` in Big O notation.
 
 ```js
 function findPower(base, exponent) {
-  if (exponent === 0) {
-    return 1;
-  }
+    if (exponent === 0) {
+        return 1;
+    }
 
-  if (exponent % 2 === 0) {
-    const halfPower = findPower(base, exponent / 2);
-    return halfPower * halfPower;
-  } else {
-    const halfPower = findPower(base, (exponent - 1) / 2);
-    return base * halfPower * halfPower;
-  }
+    if (exponent % 2 === 0) {
+        const halfPower = findPower(base, exponent / 2);
+        return halfPower * halfPower;
+    } else {
+        const halfPower = findPower(base, (exponent - 1) / 2);
+        return base * halfPower * halfPower;
+    }
 }
 ```
 
@@ -98,13 +98,13 @@ In these examples, the time and space complexity are the same. However, this is 
 
 ```js
 function findSum(arr) {
-  let sum = 0;
+    let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
 
-  return sum;
+    return sum;
 }
 ```
 

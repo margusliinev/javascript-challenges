@@ -27,12 +27,12 @@ areAllCharactersUnique('a'); // true
 
 ### Constraints
 
-- It should be case sensitive, so `a` and `A` are considered different characters
-- An empty string should return `true` by default
+-   It should be case sensitive, so `a` and `A` are considered different characters
+-   An empty string should return `true` by default
 
 ### Hints
 
-- You can use a for loop to iterate through the string and check if the current character is in the set or object.
+-   You can use a for loop to iterate through the string and check if the current character is in the set or object.
 
 ## Solutions
 
@@ -43,17 +43,17 @@ Using a `Set`:
 
 ```js
 function areAllCharactersUnique(str) {
-  const charSet = new Set();
+    const charSet = new Set();
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (charSet.has(char)) {
-      return false;
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (charSet.has(char)) {
+            return false;
+        }
+        charSet.add(char);
     }
-    charSet.add(char);
-  }
 
-  return true;
+    return true;
 }
 ```
 
@@ -61,8 +61,8 @@ function areAllCharactersUnique(str) {
 
 -Initialize a new `Set` to keep track of the characters we've seen so far.
 
-- Iterate through the string and check if the current character is in the set. If it is, we return `false` because it means we've seen the character before. If it isn't, we add it to the set.
-- If we make it through the entire string without returning `false`, we return `true` because it means we haven't seen any characters more than once.
+-   Iterate through the string and check if the current character is in the set. If it is, we return `false` because it means we've seen the character before. If it isn't, we add it to the set.
+-   If we make it through the entire string without returning `false`, we return `true` because it means we haven't seen any characters more than once.
 
 </details>
 
@@ -73,17 +73,17 @@ Using an object:
 
 ```js
 function areAllCharactersUnique(str) {
-  const charCount = {};
+    const charCount = {};
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (charCount[char]) {
-      return false;
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (charCount[char]) {
+            return false;
+        }
+        charCount[char] = true;
     }
-    charCount[char] = true;
-  }
 
-  return true;
+    return true;
 }
 ```
 
@@ -101,10 +101,10 @@ If we make it through the entire string without returning `false`, we return `tr
 
 ```js
 test('Unique Characters in a String', () => {
-  expect(areAllCharactersUnique('abcdefg')).toBe(true);
-  expect(areAllCharactersUnique('abcdefgA')).toBe(true);
-  expect(areAllCharactersUnique('programming')).toBe(false);
-  expect(areAllCharactersUnique('')).toBe(true);
-  expect(areAllCharactersUnique('a')).toBe(true);
+    expect(areAllCharactersUnique('abcdefg')).toBe(true);
+    expect(areAllCharactersUnique('abcdefgA')).toBe(true);
+    expect(areAllCharactersUnique('programming')).toBe(false);
+    expect(areAllCharactersUnique('')).toBe(true);
+    expect(areAllCharactersUnique('a')).toBe(true);
 });
 ```

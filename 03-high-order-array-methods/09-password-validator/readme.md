@@ -33,12 +33,12 @@ validatePassword('HelloWorld'); // should return false (no digit)
 
 ### Constraints
 
-- The input password can contain any combination of letters and digits.
-- The input password can contain both uppercase and lowercase letters.
+-   The input password can contain any combination of letters and digits.
+-   The input password can contain both uppercase and lowercase letters.
 
 ### Hints
 
-- You can use the `split` function to convert the string into an array of characters and then use the `some` function to check if at least one character meets a certain condition.
+-   You can use the `split` function to convert the string into an array of characters and then use the `some` function to check if at least one character meets a certain condition.
 
 ## Solution
 
@@ -47,31 +47,25 @@ validatePassword('HelloWorld'); // should return false (no digit)
 
 ```js
 function validatePassword(password) {
-  const isLengthValid = password.length >= 8;
+    const isLengthValid = password.length >= 8;
 
-  const hasUppercase = password
-    .split('')
-    .some((char) => char === char.toUpperCase() && char !== char.toLowerCase());
+    const hasUppercase = password.split('').some((char) => char === char.toUpperCase() && char !== char.toLowerCase());
 
-  const hasLowercase = password
-    .split('')
-    .some((char) => char === char.toLowerCase() && char !== char.toUpperCase());
+    const hasLowercase = password.split('').some((char) => char === char.toLowerCase() && char !== char.toUpperCase());
 
-  const hasDigit = password
-    .split('')
-    .some((char) => !isNaN(parseInt(char, 10)));
+    const hasDigit = password.split('').some((char) => !isNaN(parseInt(char, 10)));
 
-  return isLengthValid && hasUppercase && hasLowercase && hasDigit;
+    return isLengthValid && hasUppercase && hasLowercase && hasDigit;
 }
 ```
 
 ### Explanation
 
-- Create a variable called `isLengthValid` and assign it the value of `true` if the password is at least 8 characters long, and `false` otherwise.
-- Create a variable called `hasUppercase` and assign it the value of `true` if the password contains at least one uppercase letter, and `false` otherwise.
-- Create a variable called `hasLowercase` and assign it the value of `true` if the password contains at least one lowercase letter, and `false` otherwise.
-- Create a variable called `hasDigit` and assign it the value of `true` if the password contains at least one digit, and `false` otherwise.
-- Return the result of the expression `isLengthValid && hasUppercase && hasLowercase && hasDigit`.
+-   Create a variable called `isLengthValid` and assign it the value of `true` if the password is at least 8 characters long, and `false` otherwise.
+-   Create a variable called `hasUppercase` and assign it the value of `true` if the password contains at least one uppercase letter, and `false` otherwise.
+-   Create a variable called `hasLowercase` and assign it the value of `true` if the password contains at least one lowercase letter, and `false` otherwise.
+-   Create a variable called `hasDigit` and assign it the value of `true` if the password contains at least one digit, and `false` otherwise.
+-   Return the result of the expression `isLengthValid && hasUppercase && hasLowercase && hasDigit`.
 
 The `some` function is used to check if at least one character in the password meets a certain condition. The `some` function takes in a callback function as an argument. The callback function is called for each character in the password. If the callback function returns `true` for at least one character, then the `some` function returns `true`. Otherwise, the `some` function returns `false`.
 
@@ -81,9 +75,9 @@ The `some` function is used to check if at least one character in the password m
 
 ```js
 test('Password Validation', () => {
-  expect(validatePassword('Abc12345')).toBe(true);
-  expect(validatePassword('password123')).toBe(false);
-  expect(validatePassword('Pass')).toBe(false);
-  expect(validatePassword('HelloWorld')).toBe(false);
+    expect(validatePassword('Abc12345')).toBe(true);
+    expect(validatePassword('password123')).toBe(false);
+    expect(validatePassword('Pass')).toBe(false);
+    expect(validatePassword('HelloWorld')).toBe(false);
 });
 ```

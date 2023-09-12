@@ -48,35 +48,34 @@ findMiddle(list); // returns 4
 
 ### Hints
 
-- Use two pointers to solve this problem
-- One pointer should move at twice the speed of the other pointer
-- When the faster pointer reaches the end of the list, the slower pointer will be at the middle node
+-   Use two pointers to solve this problem
+-   One pointer should move at twice the speed of the other pointer
+-   When the faster pointer reaches the end of the list, the slower pointer will be at the middle node
 
 ## Solutions
 
 <details>
   <summary>Click For Solution</summary>
 
-
 ```js
 function findMiddle(list) {
-  let slow = list.head;
-  let fast = list.head;
-  let prev = null;
+    let slow = list.head;
+    let fast = list.head;
+    let prev = null;
 
-  while (fast !== null && fast.next !== null) {
-    fast = fast.next.next;
-    prev = slow;
-    slow = slow.next;
-  }
+    while (fast !== null && fast.next !== null) {
+        fast = fast.next.next;
+        prev = slow;
+        slow = slow.next;
+    }
 
-  if (fast === null) {
-    // Even number of nodes
-    return prev.next;
-  } else {
-    // Odd number of nodes
-    return slow;
-  }
+    if (fast === null) {
+        // Even number of nodes
+        return prev.next;
+    } else {
+        // Odd number of nodes
+        return slow;
+    }
 }
 ```
 
@@ -87,10 +86,10 @@ function findMiddle(list) {
 
 We will use the `fast and slow pointer pattern` to find the middle node of the linked list.
 
-- Set both pointers to the head of the list.
-- Run a while loop to traverse the list. The loop condition is that the fast pointer is not null and the next node of the fast pointer is not null. This ensures that the fast pointer is always ahead of the slow pointer.
-- Inside the loop, move the fast pointer two nodes at a time by assigning `fast = fast.next.next`. Then move the slow pointer one node at a time by assigning `slow = slow.next`.
-- After the loop, check if the fast pointer is null. If it is null, then the list has an even number of nodes. In this case, return the second middle node, which is the next node of the slow pointer. If the fast pointer is not null, then the list has an odd number of nodes. In this case, return the slow pointer.
+-   Set both pointers to the head of the list.
+-   Run a while loop to traverse the list. The loop condition is that the fast pointer is not null and the next node of the fast pointer is not null. This ensures that the fast pointer is always ahead of the slow pointer.
+-   Inside the loop, move the fast pointer two nodes at a time by assigning `fast = fast.next.next`. Then move the slow pointer one node at a time by assigning `slow = slow.next`.
+-   After the loop, check if the fast pointer is null. If it is null, then the list has an even number of nodes. In this case, return the second middle node, which is the next node of the slow pointer. If the fast pointer is not null, then the list has an odd number of nodes. In this case, return the slow pointer.
 
 ### Time & Space Complexity
 
@@ -104,29 +103,29 @@ The space complexity of the function is `O(1)`. Regardless of the size of the li
 
 ```js
 describe('findMiddle', () => {
-  test('should return the middle node for a linked list with an odd number of nodes', () => {
-    const list = new LinkedList();
-    list.add(1);
-    list.add(2);
-    list.add(3);
-    list.add(4);
-    list.add(5);
+    test('should return the middle node for a linked list with an odd number of nodes', () => {
+        const list = new LinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
 
-    const middleNode = findMiddle(list);
-    expect(middleNode.data).toBe(3);
-  });
+        const middleNode = findMiddle(list);
+        expect(middleNode.data).toBe(3);
+    });
 
-  test('should return the second middle node for a linked list with an even number of nodes', () => {
-    const list = new LinkedList();
-    list.add(1);
-    list.add(2);
-    list.add(3);
-    list.add(4);
-    list.add(5);
-    list.add(6);
+    test('should return the second middle node for a linked list with an even number of nodes', () => {
+        const list = new LinkedList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
 
-    const middleNode = findMiddle(list);
-    expect(middleNode.data).toBe(4);
-  });
+        const middleNode = findMiddle(list);
+        expect(middleNode.data).toBe(4);
+    });
 });
 ```

@@ -16,42 +16,42 @@ Let's implement this in JavaScript. We will use the same `Node` class we used in
 
 ```js
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 function depthFirstTraversal(root) {
-  if (!root) {
-    return [];
-  }
-
-  const result = [];
-  const stack = [];
-
-  stack.push(root);
-
-  while (stack.length > 0) {
-    const current = stack.pop();
-    result.push(current.data);
-
-    if (current.right) {
-      stack.push(current.right);
+    if (!root) {
+        return [];
     }
 
-    if (current.left) {
-      stack.push(current.left);
-    }
-  }
+    const result = [];
+    const stack = [];
 
-  return result;
+    stack.push(root);
+
+    while (stack.length > 0) {
+        const current = stack.pop();
+        result.push(current.data);
+
+        if (current.right) {
+            stack.push(current.right);
+        }
+
+        if (current.left) {
+            stack.push(current.left);
+        }
+    }
+
+    return result;
 }
 
 module.exports = {
-  Node,
-  depthFirstTraversal,
+    Node,
+    depthFirstTraversal,
 };
 ```
 
@@ -73,37 +73,37 @@ Now, let's refactor this code to use the `Stack` class we created a few lessons 
 const Stack = require('./stack');
 
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 function depthFirstTraversal(root) {
-  if (!root) {
-    return [];
-  }
-
-  const result = [];
-  const stack = new Stack();
-
-  stack.push(root);
-
-  while (!stack.isEmpty()) {
-    const current = stack.pop();
-    result.push(current.data);
-
-    if (current.right) {
-      stack.push(current.right);
+    if (!root) {
+        return [];
     }
 
-    if (current.left) {
-      stack.push(current.left);
-    }
-  }
+    const result = [];
+    const stack = new Stack();
 
-  return result;
+    stack.push(root);
+
+    while (!stack.isEmpty()) {
+        const current = stack.pop();
+        result.push(current.data);
+
+        if (current.right) {
+            stack.push(current.right);
+        }
+
+        if (current.left) {
+            stack.push(current.left);
+        }
+    }
+
+    return result;
 }
 ```
 
@@ -115,36 +115,36 @@ This code is very similar, except we used a pre-defined `Stack` class instead of
 const { Node, depthFirstTraversal } = require('./depth-first-traversal');
 
 describe('Depth First Traversal', () => {
-  test('Should perform depth-first traversal on the binary tree', () => {
-    // Create a binary tree:      a
-    //                          /   \
-    //                         b     c
-    //                        / \    /
-    //                       d   e  f
+    test('Should perform depth-first traversal on the binary tree', () => {
+        // Create a binary tree:      a
+        //                          /   \
+        //                         b     c
+        //                        / \    /
+        //                       d   e  f
 
-    const root = new Node('a');
-    const nodeB = new Node('b');
-    const nodeC = new Node('c');
-    const nodeD = new Node('d');
-    const nodeE = new Node('e');
-    const nodeF = new Node('f');
+        const root = new Node('a');
+        const nodeB = new Node('b');
+        const nodeC = new Node('c');
+        const nodeD = new Node('d');
+        const nodeE = new Node('e');
+        const nodeF = new Node('f');
 
-    root.left = nodeB;
-    root.right = nodeC;
-    nodeB.left = nodeD;
-    nodeB.right = nodeE;
-    nodeC.left = nodeF;
+        root.left = nodeB;
+        root.right = nodeC;
+        nodeB.left = nodeD;
+        nodeB.right = nodeE;
+        nodeC.left = nodeF;
 
-    expect(depthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
-  });
+        expect(depthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
+    });
 
-  test('Should return an empty array for an empty tree', () => {
-    expect(depthFirstTraversal(null)).toEqual([]);
-  });
+    test('Should return an empty array for an empty tree', () => {
+        expect(depthFirstTraversal(null)).toEqual([]);
+    });
 
-  test('Should handle a tree with only the root node', () => {
-    const root = new Node('root');
-    expect(depthFirstTraversal(root)).toEqual(['root']);
-  });
+    test('Should handle a tree with only the root node', () => {
+        const root = new Node('root');
+        expect(depthFirstTraversal(root)).toEqual(['root']);
+    });
 });
 ```

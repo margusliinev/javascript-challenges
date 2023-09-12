@@ -19,7 +19,7 @@ function reverseStringStack(str: string): string;
 
 ### Constraints
 
-- The string will only contain lowercase letters and spaces
+-   The string will only contain lowercase letters and spaces
 
 ### Examples
 
@@ -31,8 +31,8 @@ reverseStringStack('Greetings from Earth'); // htraE morf sgniteerG
 
 ### Hints
 
-- Push each character onto the stack
-- Pop the characters from the stack to construct the reversed string
+-   Push each character onto the stack
+-   Pop the characters from the stack to construct the reversed string
 
 ## Solutions
 
@@ -43,31 +43,31 @@ reverseStringStack('Greetings from Earth'); // htraE morf sgniteerG
 const Stack = require('./stack');
 
 function reverseString(str) {
-  const stack = new Stack();
+    const stack = new Stack();
 
-  // Push each character onto the stack
-  for (let i = 0; i < str.length; i++) {
-    stack.push(str[i]);
-  }
+    // Push each character onto the stack
+    for (let i = 0; i < str.length; i++) {
+        stack.push(str[i]);
+    }
 
-  let reversedString = '';
+    let reversedString = '';
 
-  // Pop the characters from the stack to construct the reversed string
-  while (!stack.isEmpty()) {
-    reversedString += stack.pop();
-  }
+    // Pop the characters from the stack to construct the reversed string
+    while (!stack.isEmpty()) {
+        reversedString += stack.pop();
+    }
 
-  return reversedString;
+    return reversedString;
 }
 ```
 
 ### Explanation
 
-- Initialize a new `Stack` instance.
-- Iterate through the string and pushed each character onto the stack.
-- Initialize a variable called `reversedString` and set it to an empty string.
-- Iterate through the stack and pop each character off and added it to the `reversedString` variable.
-- Return the `reversedString` variable.
+-   Initialize a new `Stack` instance.
+-   Iterate through the string and pushed each character onto the stack.
+-   Initialize a variable called `reversedString` and set it to an empty string.
+-   Iterate through the stack and pop each character off and added it to the `reversedString` variable.
+-   Return the `reversedString` variable.
 
 ### Time & Space Complexity
 
@@ -81,8 +81,8 @@ The space complexity of the function is also `O(n)`, where n is the length of th
 
 ```js
 test('Reversing a string', () => {
-  expect(reverseStringStack('Hello')).toBe('olleH');
-  expect(reverseStringStack('JavaScript')).toBe('tpircSavaJ');
-  expect(reverseStringStack('12345')).toBe('54321');
+    expect(reverseStringStack('Hello')).toBe('olleH');
+    expect(reverseStringStack('JavaScript')).toBe('tpircSavaJ');
+    expect(reverseStringStack('12345')).toBe('54321');
 });
 ```

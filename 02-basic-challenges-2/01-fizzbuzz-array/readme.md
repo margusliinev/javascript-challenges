@@ -28,12 +28,12 @@ fizzBuzzArray(15); // [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11
 
 ### Constraints
 
-- The number passed in will always be greater than 0
-- The number passed in will always be an integer
+-   The number passed in will always be greater than 0
+-   The number passed in will always be an integer
 
 ### Hints
 
-- Instead of console logging each number, you will need to push each number into an array.
+-   Instead of console logging each number, you will need to push each number into an array.
 
 ## Solutions
 
@@ -42,33 +42,33 @@ fizzBuzzArray(15); // [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11
 
 ```js
 function fizzBuzz(num) {
-  const arr = [];
+    const arr = [];
 
-  for (let i = 1; i <= num; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      arr.push('FizzBuzz');
-    } else if (i % 3 === 0) {
-      arr.push('Fizz');
-    } else if (i % 5 === 0) {
-      arr.push('Buzz');
-    } else {
-      arr.push(i);
+    for (let i = 1; i <= num; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            arr.push('FizzBuzz');
+        } else if (i % 3 === 0) {
+            arr.push('Fizz');
+        } else if (i % 5 === 0) {
+            arr.push('Buzz');
+        } else {
+            arr.push(i);
+        }
     }
-  }
 
-  return arr;
+    return arr;
 }
 ```
 
 ### Explanation
 
-- Create an empty array to store our results.
-- Loop from 1 to the number passed in.
-- Check if the number is divisible by both 3 and 5 first. If it is, we push "FizzBuzz" into the array.
-- If it's not, we check if the number is divisible by 3. If it is, we push "Fizz" into the array.
-- If it's not, we check if the number is divisible by 5. If it is, we push "Buzz" into the array.
-- If it's not, we push the number into the array.
-- Return the array.
+-   Create an empty array to store our results.
+-   Loop from 1 to the number passed in.
+-   Check if the number is divisible by both 3 and 5 first. If it is, we push "FizzBuzz" into the array.
+-   If it's not, we check if the number is divisible by 3. If it is, we push "Fizz" into the array.
+-   If it's not, we check if the number is divisible by 5. If it is, we push "Buzz" into the array.
+-   If it's not, we push the number into the array.
+-   Return the array.
 
 </details>
 
@@ -76,22 +76,6 @@ function fizzBuzz(num) {
 
 ```js
 test('FizzBuzz Array', () => {
-  expect(fizzBuzzArray(15)).toEqual([
-    1,
-    2,
-    'Fizz',
-    4,
-    'Buzz',
-    'Fizz',
-    7,
-    8,
-    'Fizz',
-    'Buzz',
-    11,
-    'Fizz',
-    13,
-    14,
-    'FizzBuzz',
-  ]);
+    expect(fizzBuzzArray(15)).toEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz']);
 });
 ```

@@ -20,9 +20,9 @@ console.log(myHashTable.getValues()); // Expected output: ['Alice', 30, 'New Yor
 
 ### Hints
 
-- You need to iterate through all buckets in the storage array and all key-value pairs within each bucket.
-- Create an array to store the values, iterate through each bucket, and then iterate through each key-value pair. Push each value to the array.
-- After iterating through all the key-value pairs, return the array of values.
+-   You need to iterate through all buckets in the storage array and all key-value pairs within each bucket.
+-   Create an array to store the values, iterate through each bucket, and then iterate through each key-value pair. Push each value to the array.
+-   After iterating through all the key-value pairs, return the array of values.
 
 ### Solutions
 
@@ -53,25 +53,25 @@ console.log(myHashTable.getValues()); // Expected output: ['Alice', 30, 'New Yor
 const HashTable = require('./HashTable');
 
 describe('HashTable', () => {
-  let hashTable;
+    let hashTable;
 
-  beforeEach(() => {
-    hashTable = new HashTable();
-  });
+    beforeEach(() => {
+        hashTable = new HashTable();
+    });
 
-  test('Get values from hash table', () => {
-    hashTable.set('name', 'Alice');
-    hashTable.set('age', 30);
-    hashTable.set('city', 'New York');
+    test('Get values from hash table', () => {
+        hashTable.set('name', 'Alice');
+        hashTable.set('age', 30);
+        hashTable.set('city', 'New York');
 
-    const values = hashTable.getValues();
-    expect(values).toEqual(expect.arrayContaining(['Alice', 30, 'New York']));
-    expect(values).toHaveLength(3);
-  });
+        const values = hashTable.getValues();
+        expect(values).toEqual(expect.arrayContaining(['Alice', 30, 'New York']));
+        expect(values).toHaveLength(3);
+    });
 
-  test('Get values from an empty hash table', () => {
-    const values = hashTable.getValues();
-    expect(values).toEqual([]);
-  });
+    test('Get values from an empty hash table', () => {
+        const values = hashTable.getValues();
+        expect(values).toEqual([]);
+    });
 });
 ```

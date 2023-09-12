@@ -20,9 +20,9 @@ We can also pass an array of arrays to the `Map()` constructor. The first elemen
 
 ```js
 const nameMap = new Map([
-  [1, 'John'],
-  [2, 'Jane'],
-  [3, 'Joe'],
+    [1, 'John'],
+    [2, 'Jane'],
+    [3, 'Joe'],
 ]);
 ```
 
@@ -39,12 +39,12 @@ const myFunction = () => {};
 const emptyObj = {};
 
 const map2 = new Map([
-  ['name', 'John'],
-  [1, 'number one'],
-  [true, 'really true'],
-  [null, 'null'],
-  [myFunction, 'empty function'],
-  [emptyObj, 'empty object'],
+    ['name', 'John'],
+    [1, 'number one'],
+    [true, 'really true'],
+    [null, 'null'],
+    [myFunction, 'empty function'],
+    [emptyObj, 'empty object'],
 ]);
 ```
 
@@ -110,7 +110,7 @@ To iterate/loop through a map, we can use the `for...of` loop. Let's loop throug
 
 ```js
 for (const [key, value] of nameMap) {
-  console.log(key, value);
+    console.log(key, value);
 }
 ```
 
@@ -118,7 +118,7 @@ You can also use the `forEach()` method to loop through a map. Let's log each ke
 
 ```js
 nameMap.forEach((value, key) => {
-  console.log(key, value);
+    console.log(key, value);
 });
 ```
 

@@ -25,9 +25,9 @@ sumOfEvenSquares([]); // 0
 
 ### Hints
 
-- Use the `filter` method to select the even numbers from the array.
-- Then, use the `map` method to square each even number.
-- Finally, use the `reduce` method to sum up the squared even numbers.
+-   Use the `filter` method to select the even numbers from the array.
+-   Then, use the `map` method to square each even number.
+-   Finally, use the `reduce` method to sum up the squared even numbers.
 
 ## Solutions
 
@@ -36,11 +36,9 @@ sumOfEvenSquares([]); // 0
 
 ```js
 function sumOfEvenSquares(numbers) {
-  const evenSquares = numbers
-    .filter((num) => num % 2 === 0)
-    .map((num) => num ** 2);
+    const evenSquares = numbers.filter((num) => num % 2 === 0).map((num) => num ** 2);
 
-  return evenSquares.reduce((sum, square) => sum + square, 0);
+    return evenSquares.reduce((sum, square) => sum + square, 0);
 }
 ```
 
@@ -48,22 +46,22 @@ function sumOfEvenSquares(numbers) {
 
 You can format this so many different ways. This is just one example.
 
-- Create a variable called `evenSquares` and set it equal to the result of calling the `filter` method on the `numbers` array and then calling the `map` method on the result of that.
+-   Create a variable called `evenSquares` and set it equal to the result of calling the `filter` method on the `numbers` array and then calling the `map` method on the result of that.
 
-- For the `filter` method, pass in a callback function that takes in a number and returns `true` if the number is even and `false` otherwise. We used the modulo operator (`%`) to check if the number is even.
+-   For the `filter` method, pass in a callback function that takes in a number and returns `true` if the number is even and `false` otherwise. We used the modulo operator (`%`) to check if the number is even.
 
-- For the `map` method, pass in a callback function that takes in a number and returns the square of that number. Now we have an array of the squares of the even numbers.
+-   For the `map` method, pass in a callback function that takes in a number and returns the square of that number. Now we have an array of the squares of the even numbers.
 
-- Finally, call the `reduce` method on the `evenSquares` array and pass in a callback function that takes in a sum and a square and returns the sum plus the square. We set the initial value of the sum to `0`.
+-   Finally, call the `reduce` method on the `evenSquares` array and pass in a callback function that takes in a sum and a square and returns the sum plus the square. We set the initial value of the sum to `0`.
 
 We could even shorten this by chaining the methods together and using an arrow function:
 
 ```js
 const sumOfEvenSquares = (numbers) =>
-  numbers
-    .filter((num) => num % 2 === 0)
-    .map((num) => num ** 2)
-    .reduce((sum, square) => sum + square, 0);
+    numbers
+        .filter((num) => num % 2 === 0)
+        .map((num) => num ** 2)
+        .reduce((sum, square) => sum + square, 0);
 ```
 
 </details>
@@ -72,8 +70,8 @@ const sumOfEvenSquares = (numbers) =>
 
 ```js
 test('Sum of even squares', () => {
-  expect(sumOfEvenSquares([1, 2, 3, 4, 5])).toBe(20);
-  expect(sumOfEvenSquares([-1, 0, 1, 2, 3, 4])).toBe(20);
-  expect(sumOfEvenSquares([])).toBe(0);
+    expect(sumOfEvenSquares([1, 2, 3, 4, 5])).toBe(20);
+    expect(sumOfEvenSquares([-1, 0, 1, 2, 3, 4])).toBe(20);
+    expect(sumOfEvenSquares([])).toBe(0);
 });
 ```

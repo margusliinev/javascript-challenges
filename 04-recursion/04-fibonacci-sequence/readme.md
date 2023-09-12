@@ -10,9 +10,9 @@ The Fibonacci sequence is a series of numbers where the sequence starts with 0 a
 
 `F(n) = F(n-1) + F(n-2)` is the formula for the Fibonacci sequence.
 
-- F(n) is the number in the sequence.
-- F(n-1) is the number before it.
-- F(n-2) is the number before that.
+-   F(n) is the number in the sequence.
+-   F(n-1) is the number before it.
+-   F(n-2) is the number before that.
 
 So if we wanted to find the 5th number in the sequence, we would do this:
 
@@ -50,12 +50,12 @@ fibonacci(10); // 55
 
 ### Constraints
 
-- The input number will always be a positive integer
+-   The input number will always be a positive integer
 
 ### Hints
 
-- You know that the formula is `F(n) = F(n-1) + F(n-2)`. ` F`` is the function, and  `n` is the number in the sequence.
-- You know that the first two numbers in the sequence are `0` and `1`. So if the number is less than 2, you can return the number.
+-   You know that the formula is `F(n) = F(n-1) + F(n-2)`. `F`` is the function, and `n` is the number in the sequence.
+-   You know that the first two numbers in the sequence are `0` and `1`. So if the number is less than 2, you can return the number.
 
 ## Solutions
 
@@ -64,19 +64,19 @@ fibonacci(10); // 55
 
 ```js
 function fibonacci(num) {
-  // Base case
-  if (num < 2) return num;
+    // Base case
+    if (num < 2) return num;
 
-  // Recursive case
-  return fibonacci(num - 1) + fibonacci(num - 2);
+    // Recursive case
+    return fibonacci(num - 1) + fibonacci(num - 2);
 }
 ```
 
 ### Explanation
 
-- We have what we call the `base case`, which is when the number is less than 2.
-- If this is true, we return the number.
-- If it is not true, we run the `recursive case`, which will return the sum of the previous two numbers. This will continue until the number is less than 2.
+-   We have what we call the `base case`, which is when the number is less than 2.
+-   If this is true, we return the number.
+-   If it is not true, we run the `recursive case`, which will return the sum of the previous two numbers. This will continue until the number is less than 2.
 
 Let's look at this step by step using an example where input num is 5:
 
@@ -88,19 +88,18 @@ Let's look at this step by step using an example where input num is 5:
 6. Base Case 2: `fibonacci(1)` returns 1.
 7. Unwinding Process: As the recursive calls return, the function accumulates the results:
 
-- `fibonacci(1)` returns 1.
-- `fibonacci(2)` returns 1.
-- `fibonacci(3)` returns `fibonacci(2) + fibonacci(1)` = 1 + 1 = `2`.
-- `fibonacci(4)` returns `fibonacci(3) + fibonacci(2)` = 2 + 1 = `3`.
-- `fibonacci(5)` returns `fibonacci(4) + fibonacci(3)` = 3 + 2 = `5`.
+-   `fibonacci(1)` returns 1.
+-   `fibonacci(2)` returns 1.
+-   `fibonacci(3)` returns `fibonacci(2) + fibonacci(1)` = 1 + 1 = `2`.
+-   `fibonacci(4)` returns `fibonacci(3) + fibonacci(2)` = 2 + 1 = `3`.
+-   `fibonacci(5)` returns `fibonacci(4) + fibonacci(3)` = 3 + 2 = `5`.
 
 So, `fibonacci(5)` returns `5`, which is the fifth number in the Fibonacci sequence.
 
 We could make this a one liner by using the ternary operator:
 
 ```js
-const fibonacci = (num) =>
-  num < 2 ? num : fibonacci(num - 1) + fibonacci(num - 2);
+const fibonacci = (num) => (num < 2 ? num : fibonacci(num - 1) + fibonacci(num - 2));
 ```
 
 </details>
@@ -109,15 +108,15 @@ const fibonacci = (num) =>
 
 ```js
 describe('fibonacci', () => {
-  it('should return the correct Fibonacci number', () => {
-    expect(fibonacci(0)).toBe(0); // The 0th Fibonacci number is 0
-    expect(fibonacci(1)).toBe(1); // The 1st Fibonacci number is 1
-    expect(fibonacci(2)).toBe(1); // The 2nd Fibonacci number is 1 (0 + 1)
-    expect(fibonacci(3)).toBe(2); // The 3rd Fibonacci number is 2 (1 + 1)
-    expect(fibonacci(4)).toBe(3); // The 4th Fibonacci number is 3 (1 + 2)
-    expect(fibonacci(5)).toBe(5); // The 5th Fibonacci number is 5 (2 + 3)
-    expect(fibonacci(6)).toBe(8); // The 6th Fibonacci number is 8 (3 + 5)
-    expect(fibonacci(7)).toBe(13); // The 7th Fibonacci number is 13 (5 + 8)
-  });
+    it('should return the correct Fibonacci number', () => {
+        expect(fibonacci(0)).toBe(0); // The 0th Fibonacci number is 0
+        expect(fibonacci(1)).toBe(1); // The 1st Fibonacci number is 1
+        expect(fibonacci(2)).toBe(1); // The 2nd Fibonacci number is 1 (0 + 1)
+        expect(fibonacci(3)).toBe(2); // The 3rd Fibonacci number is 2 (1 + 1)
+        expect(fibonacci(4)).toBe(3); // The 4th Fibonacci number is 3 (1 + 2)
+        expect(fibonacci(5)).toBe(5); // The 5th Fibonacci number is 5 (2 + 3)
+        expect(fibonacci(6)).toBe(8); // The 6th Fibonacci number is 8 (3 + 5)
+        expect(fibonacci(7)).toBe(13); // The 7th Fibonacci number is 13 (5 + 8)
+    });
 });
 ```

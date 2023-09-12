@@ -32,12 +32,12 @@ function factorial(num: number): number;
 
 ### Constraints
 
-- The input number will always be a positive integer
+-   The input number will always be a positive integer
 
 ### Hints
 
-- Check if the number is 0 or 1. If it is, return 1.
-- You can use recursion to calculate the factorial by multiplying the current number by the factorial of the previous number until you hit the base case.
+-   Check if the number is 0 or 1. If it is, return 1.
+-   You can use recursion to calculate the factorial by multiplying the current number by the factorial of the previous number until you hit the base case.
 
 ### Examples
 
@@ -54,11 +54,11 @@ factorial(10); // 3628800 (10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 362880
 
 ```js
 function factorial(num) {
-  if (num === 0 || num === 1) {
-    return 1;
-  }
+    if (num === 0 || num === 1) {
+        return 1;
+    }
 
-  return num * factorial(num - 1);
+    return num * factorial(num - 1);
 }
 ```
 
@@ -97,14 +97,14 @@ The final result is indeed 120, which is the correct factorial of 5.
 
 ```js
 test('Factorial of 0 should be 1', () => {
-  expect(factorial(0)).toBe(1);
+    expect(factorial(0)).toBe(1);
 });
 
 test('Factorial of 5 should be 120', () => {
-  expect(factorial(5)).toBe(120);
+    expect(factorial(5)).toBe(120);
 });
 
 test('Factorial of 10 should be 3628800', () => {
-  expect(factorial(10)).toBe(3628800);
+    expect(factorial(10)).toBe(3628800);
 });
 ```

@@ -19,11 +19,7 @@ function phoneNumberDirectory(phoneNumbers: string[]): Map<string, string>
 ### Examples
 
 ```js
-const phoneNumbers = [
-  'John:123-456-7890',
-  'Jane:987-654-3210',
-  'Joe:555-555-5555',
-];
+const phoneNumbers = ['John:123-456-7890', 'Jane:987-654-3210', 'Joe:555-555-5555'];
 
 console.log(phoneNumberDirectory(phoneNumbers));
 // Output: Map { 'John' => '123-456-7890', 'Jane' => '987-654-3210', 'Joe' => '555-555-5555' }
@@ -31,11 +27,11 @@ console.log(phoneNumberDirectory(phoneNumbers));
 
 ### Constraints
 
-- The input array elements should be formatted as `NAME:PHONENUMBER`
+-   The input array elements should be formatted as `NAME:PHONENUMBER`
 
 ### Hints
 
-- Loop through the input array and use the `split()` method to separate the name and phone number in each element of the `phoneNumbers` array before adding to the map
+-   Loop through the input array and use the `split()` method to separate the name and phone number in each element of the `phoneNumbers` array before adding to the map
 
 ## Solutions
 
@@ -44,24 +40,24 @@ console.log(phoneNumberDirectory(phoneNumbers));
 
 ```js
 function phoneNumberDirectory(phoneNumbers) {
-  const directory = new Map();
+    const directory = new Map();
 
-  for (const entry of phoneNumbers) {
-    const [name, phoneNumber] = entry.split(':');
-    directory.set(name, phoneNumber);
-  }
+    for (const entry of phoneNumbers) {
+        const [name, phoneNumber] = entry.split(':');
+        directory.set(name, phoneNumber);
+    }
 
-  return directory;
+    return directory;
 }
 ```
 
 ### Explanation
 
-- Create a new Map called `directory`
-- Iterate through the `phoneNumbers` array using a `for...of` loop
-- Use the `split()` method to separate the name and phone number from each entry using the colon `:` as the separator
-- Set each name as the key and its corresponding phone number as the value in the Map
-- Return the `directory`, which now contains the phone number directory
+-   Create a new Map called `directory`
+-   Iterate through the `phoneNumbers` array using a `for...of` loop
+-   Use the `split()` method to separate the name and phone number from each entry using the colon `:` as the separator
+-   Set each name as the key and its corresponding phone number as the value in the Map
+-   Return the `directory`, which now contains the phone number directory
 
 </details>
 
@@ -69,16 +65,12 @@ function phoneNumberDirectory(phoneNumbers) {
 
 ```js
 test('Building a phone number directory from an array of phone numbers', () => {
-  const phoneNumbers = [
-    'John:123-456-7890',
-    'Jane:987-654-3210',
-    'Joe:555-555-5555',
-  ];
+    const phoneNumbers = ['John:123-456-7890', 'Jane:987-654-3210', 'Joe:555-555-5555'];
 
-  const result = phoneNumberDirectory(phoneNumbers);
+    const result = phoneNumberDirectory(phoneNumbers);
 
-  expect(result.get('John')).toBe('123-456-7890');
-  expect(result.get('Jane')).toBe('987-654-3210');
-  expect(result.get('Joe')).toBe('555-555-5555');
+    expect(result.get('John')).toBe('123-456-7890');
+    expect(result.get('Jane')).toBe('987-654-3210');
+    expect(result.get('Joe')).toBe('555-555-5555');
 });
 ```

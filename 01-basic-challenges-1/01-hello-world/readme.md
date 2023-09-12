@@ -26,11 +26,11 @@ helloWorld() // 'Hello World!'
 
 I will put any constraints here. They will vary depending on the challenge.
 
-- The function must return a string
+-   The function must return a string
 
 ### Hints
 
-- I will put a couple hints here. You can choose to use them or not.
+-   I will put a couple hints here. You can choose to use them or not.
 
 ## Solutions
 

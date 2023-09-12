@@ -4,11 +4,13 @@
     "description": "javascript challenges with different data structures and algorithms",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,md}\""
     },
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "jest": "^29.6.1"
+        "jest": "^29.6.1",
+        "prettier": "^3.0.3"
     }
 }

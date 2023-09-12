@@ -26,16 +26,16 @@ console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 2
 
 ### Constraints
 
-- The input array can contain any number of elements.
-- The elements in the input array are unique and positive integers.
+-   The input array can contain any number of elements.
+-   The elements in the input array are unique and positive integers.
 
 ### Notes
 
-- The Bubble Sort algorithm works by repeatedly stepping through the list of elements, comparing each pair of adjacent items, and swapping them if they are in the wrong order. This process is repeated for each element in the list until no swaps are needed.
+-   The Bubble Sort algorithm works by repeatedly stepping through the list of elements, comparing each pair of adjacent items, and swapping them if they are in the wrong order. This process is repeated for each element in the list until no swaps are needed.
 
 ### Hints
 
-- There are a ton of ways to do this, but one is to use 2 loops. One to iterate the array and one to do the swap. You can set the current element as a temp variable, assign the next element to the current and then assign the temp value to the next element
+-   There are a ton of ways to do this, but one is to use 2 loops. One to iterate the array and one to do the swap. You can set the current element as a temp variable, assign the next element to the current and then assign the temp value to the next element
 
 # Solutions
 
@@ -44,26 +44,26 @@ console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90])); // Output: [11, 12, 22, 2
 
 ```js
 function bubbleSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        const temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
     }
-  }
-  return arr;
+    return arr;
 }
 ```
 
 ### Explanation
 
-- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop through the entire array.
-- Inside the `for` loop, start another `for` loop. The condition of the `for` loop is `j < arr.length - i - 1`. This will loop through the array, but it will stop before the last element. This is because the last element will be sorted after the first pass through the array.
-- Inside the inner `for` loop, check if the current element is greater than the next element. If it is, then swap the elements.
-- We swap the elements by creating a temporary variable called `temp` and setting it to the current element. Then we set the current element to the next element. Finally, we set the next element to `temp`.
-- Outside of the inner `for` loop, return the sorted array.
+-   Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This will loop through the entire array.
+-   Inside the `for` loop, start another `for` loop. The condition of the `for` loop is `j < arr.length - i - 1`. This will loop through the array, but it will stop before the last element. This is because the last element will be sorted after the first pass through the array.
+-   Inside the inner `for` loop, check if the current element is greater than the next element. If it is, then swap the elements.
+-   We swap the elements by creating a temporary variable called `temp` and setting it to the current element. Then we set the current element to the next element. Finally, we set the next element to `temp`.
+-   Outside of the inner `for` loop, return the sorted array.
 
 To have this make a bit more sense, put this console log inside the inner `for` loop:
 
@@ -96,33 +96,33 @@ This solution is similar, but it uses a `while` loop instead of a `for` loop. It
 
 ```js
 function bubbleSort(arr) {
-  let swapped = false;
+    let swapped = false;
 
-  while (!swapped) {
-    swapped = true;
+    while (!swapped) {
+        swapped = true;
 
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > arr[i + 1]) {
-        const temp = arr[i];
-        arr[i] = arr[i + 1];
-        arr[i + 1] = temp;
-        swapped = false;
-      }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i + 1]) {
+                const temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                swapped = false;
+            }
+        }
     }
-  }
 
-  return arr;
+    return arr;
 }
 ```
 
 ### Explanation
 
-- Declare a variable called `swapped` and setting it to `false`. This variable will keep track of whether or not we have swapped any elements. We will use this variable to determine when we can stop looping.
-- Start a `while` loop. The condition of the `while` loop is `!swapped`. This means that the loop will continue to run as long as `swapped` is `false`. This is the same as saying that the loop will continue to run as long as we have swapped any elements.
-- Inside the `while` loop, set `swapped` to `true`. This will ensure that the loop will run at least once.
-- Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This means that the loop will continue to run as long as `i` is less than the length of the array.
-- Inside the `for` loop, check if the current element is greater than the next element. If it is, then swap the elements and set `swapped` to `false`. This will ensure that the loop will run again.
-- Outside of the `for` loop, return the sorted array.
+-   Declare a variable called `swapped` and setting it to `false`. This variable will keep track of whether or not we have swapped any elements. We will use this variable to determine when we can stop looping.
+-   Start a `while` loop. The condition of the `while` loop is `!swapped`. This means that the loop will continue to run as long as `swapped` is `false`. This is the same as saying that the loop will continue to run as long as we have swapped any elements.
+-   Inside the `while` loop, set `swapped` to `true`. This will ensure that the loop will run at least once.
+-   Start a `for` loop. The condition of the `for` loop is `i < arr.length`. This means that the loop will continue to run as long as `i` is less than the length of the array.
+-   Inside the `for` loop, check if the current element is greater than the next element. If it is, then swap the elements and set `swapped` to `false`. This will ensure that the loop will run again.
+-   Outside of the `for` loop, return the sorted array.
 
 </details>
 
@@ -130,29 +130,29 @@ function bubbleSort(arr) {
 
 ```js
 test('Sort an array in ascending order', () => {
-  const unsortedArray = [5, 2, 8, 1, 3];
-  const sortedArray = [1, 2, 3, 5, 8];
-  expect(bubbleSort(unsortedArray)).toEqual(sortedArray);
+    const unsortedArray = [5, 2, 8, 1, 3];
+    const sortedArray = [1, 2, 3, 5, 8];
+    expect(bubbleSort(unsortedArray)).toEqual(sortedArray);
 });
 
 test('Sort an array with repeated values', () => {
-  const unsortedArray = [4, 1, 3, 4, 2, 2];
-  const sortedArray = [1, 2, 2, 3, 4, 4];
-  expect(bubbleSort(unsortedArray)).toEqual(sortedArray);
+    const unsortedArray = [4, 1, 3, 4, 2, 2];
+    const sortedArray = [1, 2, 2, 3, 4, 4];
+    expect(bubbleSort(unsortedArray)).toEqual(sortedArray);
 });
 
 test('Sort an already sorted array', () => {
-  const sortedArray = [1, 2, 3, 4, 5];
-  expect(bubbleSort(sortedArray)).toEqual(sortedArray);
+    const sortedArray = [1, 2, 3, 4, 5];
+    expect(bubbleSort(sortedArray)).toEqual(sortedArray);
 });
 
 test('Sort an array with one element', () => {
-  const singleElementArray = [42];
-  expect(bubbleSort(singleElementArray)).toEqual(singleElementArray);
+    const singleElementArray = [42];
+    expect(bubbleSort(singleElementArray)).toEqual(singleElementArray);
 });
 
 test('Sort an empty array', () => {
-  const emptyArray = [];
-  expect(bubbleSort(emptyArray)).toEqual(emptyArray);
+    const emptyArray = [];
+    expect(bubbleSort(emptyArray)).toEqual(emptyArray);
 });
 ```

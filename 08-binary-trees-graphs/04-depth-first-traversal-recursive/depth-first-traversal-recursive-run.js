@@ -5,4 +5,3 @@ const { Node, depthFirstTraversal } = require('./depth-first-traversal');
 //                         b     c
 //                        / \    /
 //                       d   e  f
-

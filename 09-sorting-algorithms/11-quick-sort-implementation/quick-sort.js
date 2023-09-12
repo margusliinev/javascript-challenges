@@ -1,5 +1,3 @@
-function quickSort() {
-
-}
+function quickSort() {}
 
 module.exports = quickSort;

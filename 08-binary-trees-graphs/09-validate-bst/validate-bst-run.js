@@ -6,4 +6,3 @@ const { Node, isValidBST } = require('./validate-bst');
 //     4   10
 //    / \
 //   2   6
-

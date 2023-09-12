@@ -25,7 +25,7 @@ titleCase('HERE IS MY HANDLE HERE IS MY SPOUT'); // Here Is My Handle Here Is My
 
 ### Constraints
 
-- You may assume that each word consists of only letters and spaces
+-   You may assume that each word consists of only letters and spaces
 
 ### Hints
 
@@ -48,9 +48,9 @@ function titleCase(str) {
 
 ### Explanation
 
-- Split the string into an array of words and put them all in lowercase.
-- Iterate through the array and capitalize the first letter of each word by using the 0 index of the word and concatenating it with the rest of the word.
-- Join the array back into a string and return it.
+-   Split the string into an array of words and put them all in lowercase.
+-   Iterate through the array and capitalize the first letter of each word by using the 0 index of the word and concatenating it with the rest of the word.
+-   Join the array back into a string and return it.
 
 </details>
 
@@ -59,7 +59,7 @@ function titleCase(str) {
 
 ```js
 function titleCase(str) {
-  return str.replace(/\b\w/g, (match) => match.toUpperCase());
+    return str.replace(/\b\w/g, (match) => match.toUpperCase());
 }
 ```
 
@@ -69,9 +69,9 @@ In this example, we are using the replace method to find the first letter of eac
 
 The regex `/\b\w/g` matches the first letter of each word.
 
-- `\b` matches the word boundary
-- `\w` matches the first letter of each word
-- The `g` flag is used to replace all occurrences of the regex in the string
+-   `\b` matches the word boundary
+-   `\w` matches the first letter of each word
+-   The `g` flag is used to replace all occurrences of the regex in the string
 
 The second argument is a callback function that returns the uppercase version of the matched letter.
 
@@ -81,8 +81,8 @@ The second argument is a callback function that returns the uppercase version of
 
 ```js
 test('Converting string to title case', () => {
-  expect(titleCase('hello world')).toBe('Hello World');
-  expect(titleCase('javascript programming')).toBe('Javascript Programming');
-  expect(titleCase('openai chatbot')).toBe('Openai Chatbot');
+    expect(titleCase('hello world')).toBe('Hello World');
+    expect(titleCase('javascript programming')).toBe('Javascript Programming');
+    expect(titleCase('openai chatbot')).toBe('Openai Chatbot');
 });
 ```

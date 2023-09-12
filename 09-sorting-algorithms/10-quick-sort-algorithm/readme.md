@@ -1,5 +1,3 @@
-
-
 ## Quick Sort Algorithm
 
 The Quick Sort algorithm is a highly efficient divide-and-conquer sorting algorithm. It works by selecting a "pivot" element from the array and partitioning the other elements into two subarrays according to whether they are less than or greater than the pivot. The subarrays are then sorted recursively.
@@ -12,56 +10,57 @@ Let's walk through an example using the array `[20, 13, 3, 2, 10, 1, 5, 6]` and 
 
 <img src="../../assets/images/quicksort.png" width="600" />
 
+-   Choose the pivot element (6) and partition the array:
 
-- Choose the pivot element (6) and partition the array:
+    ```plaintext
+    Pivot: 6
+    [20, 13, 3, 2, 10, 12, 1, 5, | 6]
+    ```
 
-   ```plaintext
-   Pivot: 6
-   [20, 13, 3, 2, 10, 12, 1, 5, | 6]
-   ```
+-   Partition the array into two subarrays:
 
-- Partition the array into two subarrays:
+    ```plaintext
+    [3, 2, 1, 5] | [6, 20, 13, 10]
 
-   ```plaintext
-   [3, 2, 1, 5] | [6, 20, 13, 10]
-            
-   ```
-- Left: Choose (3) pivot
+    ```
 
- ```plaintext
-   [2, 1] [3 5] 
-            
-   ```
+-   Left: Choose (3) pivot
 
-- Right: Choose (10) pivot
+```plaintext
+  [2, 1] [3 5]
 
- ```plaintext
-   [6] [10, 20, 13] 
-            
-   ```
- At this point, 6 is done as there is only one element. This is our recursive case.
+```
 
- - Left: Choose (2) pivot and (5) pivot
+-   Right: Choose (10) pivot
 
- ```plaintext
-   [1] [2] [3] [5]
-            
- ```
+```plaintext
+  [6] [10, 20, 13]
 
- These are all done.
+```
 
- - Right: choose (13) pivot
+At this point, 6 is done as there is only one element. This is our recursive case.
 
- ```plaintext
-   [10] [13, 20]
-            
- ```
+-   Left: Choose (2) pivot and (5) pivot
 
- 10 is done. Now, (20) as pivot
+```plaintext
+  [1] [2] [3] [5]
 
-  ```plaintext
-   [13] [20]
-            
- ```
+```
 
- Now there is no more than 1 value per array element and we can combine into one array: [1,2,3,5,6,10,13,20]
+These are all done.
+
+-   Right: choose (13) pivot
+
+```plaintext
+  [10] [13, 20]
+
+```
+
+10 is done. Now, (20) as pivot
+
+```plaintext
+ [13] [20]
+
+```
+
+Now there is no more than 1 value per array element and we can combine into one array: [1,2,3,5,6,10,13,20]

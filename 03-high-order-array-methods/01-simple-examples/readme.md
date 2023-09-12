@@ -17,9 +17,8 @@ const numbers = [1, 2, 3, 4, 5];
 The `map` method takes in a function as an argument and returns a new array with the result of calling the function on each element in the array. Here is an example:
 
 ```js
-
 const doubledNumbers = numbers.map((num) => {
-  return num * 2;
+    return num * 2;
 });
 
 console.log(doubledNumbers);
@@ -39,7 +38,7 @@ The `filter` method takes in a function as an argument and returns a new array w
 const numbers = [1, 2, 3, 4, 5];
 
 const evenNumbers = numbers.filter((num) => {
-  return num % 2 === 0;
+    return num % 2 === 0;
 });
 
 console.log(evenNumbers);
@@ -59,7 +58,7 @@ The `reduce` method takes in a function as an argument and returns a single valu
 const numbers = [1, 2, 3, 4, 5];
 
 const sum = numbers.reduce((total, num) => {
-  return total + num;
+    return total + num;
 }, 0);
 
 console.log(sum);
@@ -77,7 +76,7 @@ The `forEach` method takes in a function as an argument and executes the functio
 const numbers = [1, 2, 3, 4, 5];
 
 numbers.forEach((num) => {
-  console.log(num);
+    console.log(num);
 });
 
 // Output: 1 2 3 4 5
@@ -87,10 +86,10 @@ In the example above, we have an array of numbers. We call the `forEach` method 
 
 Here are some other high order array methods that you might see:
 
-- `some` - returns `true` if at least one element in the array passes the test implemented by the function
-- `every` - returns `true` if all elements in the array pass the test implemented by the function
-- `find` - returns the value of the first element in the array that passes the test implemented by the function
-- `findIndex` - returns the index of the first element in the array that passes the test implemented by the function
-- `sort` - sorts the elements in the array
-- `reverse` - reverses the order of the elements in the array
-- `includes` - returns `true` if the array contains a certain element
+-   `some` - returns `true` if at least one element in the array passes the test implemented by the function
+-   `every` - returns `true` if all elements in the array pass the test implemented by the function
+-   `find` - returns the value of the first element in the array that passes the test implemented by the function
+-   `findIndex` - returns the index of the first element in the array that passes the test implemented by the function
+-   `sort` - sorts the elements in the array
+-   `reverse` - reverses the order of the elements in the array
+-   `includes` - returns `true` if the array contains a certain element

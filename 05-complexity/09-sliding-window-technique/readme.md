@@ -20,14 +20,14 @@ Let's talk a little bit about how this works:
 
 ## Advantages
 
-- **Optimized Time Complexity:** Sliding window reduces the time complexity by avoiding redundant calculations. It's particularly beneficial for situations where brute-force solutions would require nested loops.
+-   **Optimized Time Complexity:** Sliding window reduces the time complexity by avoiding redundant calculations. It's particularly beneficial for situations where brute-force solutions would require nested loops.
 
-- **Space Efficiency:** The technique doesn't require storing all individual subarrays or substrings, reducing memory usage.
+-   **Space Efficiency:** The technique doesn't require storing all individual subarrays or substrings, reducing memory usage.
 
-- **Simplicity:** Once understood, sliding window problems often become easier to solve compared to their naive counterparts.
+-   **Simplicity:** Once understood, sliding window problems often become easier to solve compared to their naive counterparts.
 
 ## Notes
 
-- Sliding window is best suited for problems that involve contiguous subarrays or substrings.
-- The technique can have variations such as dynamic window size or two-pointer sliding.
-- Be cautious of edge cases where the window size becomes important for efficiency or correctness.
+-   Sliding window is best suited for problems that involve contiguous subarrays or substrings.
+-   The technique can have variations such as dynamic window size or two-pointer sliding.
+-   Be cautious of edge cases where the window size becomes important for efficiency or correctness.

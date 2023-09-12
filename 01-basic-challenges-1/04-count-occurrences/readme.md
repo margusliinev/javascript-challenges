@@ -1,6 +1,5 @@
 # Challenge: Count Occurrences
 
-
 ## Instructions
 
 Write a function called `countOccurrences()` that takes in a string and a character and returns the number of occurrences of that character in the string.
@@ -26,13 +25,13 @@ countOccurrences('hello', 'z'); // 0
 
 ### Constraints
 
-- Lowercase and uppercase characters are considered different characters. If you want, you can make the function case insensitive
+-   Lowercase and uppercase characters are considered different characters. If you want, you can make the function case insensitive
 
 ### Hints
 
-- You can loop through a string just like you can loop through an array.
-- You can use the `++` operator to increment a variable.
-- You could take another approach and use the `split()` method to split the string into an array of substrings based on the given character.
+-   You can loop through a string just like you can loop through an array.
+-   You can use the `++` operator to increment a variable.
+-   You could take another approach and use the `split()` method to split the string into an array of substrings based on the given character.
 
 ## Solutions
 
@@ -72,13 +71,13 @@ function countOccurrences(str, char) {
 
 ### Explanation
 
-- Initialize a `count` variable to 0.
+-   Initialize a `count` variable to 0.
 
-- Iterate through the string and check if the current character is equal to the character we're looking for. If it is, we increment the `count` variable.
+-   Iterate through the string and check if the current character is equal to the character we're looking for. If it is, we increment the `count` variable.
 
-- After the loop, we return the `count` variable.
+-   After the loop, we return the `count` variable.
 
-- To make the function case insensitive, we can convert the string and character to lowercase before looping through the string.
+-   To make the function case insensitive, we can convert the string and character to lowercase before looping through the string.
 
 </details>
 
@@ -91,9 +90,9 @@ const countOccurrences = (str, char) => str.split(char).length - 1;
 
 ### Explanation
 
-- Utilize the split method of the string to split it into an array of substrings based on the given character.
+-   Utilize the split method of the string to split it into an array of substrings based on the given character.
 
-- Since splitting the string removes the character, the resulting array will have one less element than the number of occurrences of the character. Therefore, we can simply subtract 1 from the length of the array to get the count of occurrences.
+-   Since splitting the string removes the character, the resulting array will have one less element than the number of occurrences of the character. Therefore, we can simply subtract 1 from the length of the array to get the count of occurrences.
 
 This solution may be prettier, but it actually is not as efficient as the loop. The for loop solution directly counts the occurrences while iterating through the string, whereas the split solution involves splitting the string into an array and performing additional operations. The difference is negligible, but it is still good to be aware of.
 
@@ -103,8 +102,8 @@ This solution may be prettier, but it actually is not as efficient as the loop. 
 
 ```js
 test('Count Occurrences of a Character', () => {
-  expect(countOccurrences('hello', 'l')).toBe(2);
-  expect(countOccurrences('programming', 'm')).toBe(2);
-  expect(countOccurrences('banana', 'a')).toBe(3);
+    expect(countOccurrences('hello', 'l')).toBe(2);
+    expect(countOccurrences('programming', 'm')).toBe(2);
+    expect(countOccurrences('banana', 'a')).toBe(3);
 });
 ```

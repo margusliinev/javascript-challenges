@@ -16,42 +16,42 @@ Let's implement the breadth-first traversal in JavaScript:
 
 ```js
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 function breadthFirstTraversal(root) {
-  if (!root) {
-    return [];
-  }
-
-  const result = [];
-  const queue = [];
-
-  queue.push(root);
-
-  while (queue.length > 0) {
-    const current = queue.shift();
-    result.push(current.data);
-
-    if (current.left) {
-      queue.push(current.left);
+    if (!root) {
+        return [];
     }
 
-    if (current.right) {
-      queue.push(current.right);
-    }
-  }
+    const result = [];
+    const queue = [];
 
-  return result;
+    queue.push(root);
+
+    while (queue.length > 0) {
+        const current = queue.shift();
+        result.push(current.data);
+
+        if (current.left) {
+            queue.push(current.left);
+        }
+
+        if (current.right) {
+            queue.push(current.right);
+        }
+    }
+
+    return result;
 }
 
 module.exports = {
-  Node,
-  breadthFirstTraversal,
+    Node,
+    breadthFirstTraversal,
 };
 ```
 
@@ -73,42 +73,42 @@ Now, let's refactor this code to use the `Queue` class. You can do this as a cha
 const Queue = require('./queue');
 
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
 }
 
 function breadthFirstTraversal(root) {
-  if (!root) {
-    return [];
-  }
-
-  const result = [];
-  const queue = new Queue();
-
-  queue.enqueue(root);
-
-  while (!queue.isEmpty()) {
-    const current = queue.dequeue();
-    result.push(current.data);
-
-    if (current.left) {
-      queue.enqueue(current.left);
+    if (!root) {
+        return [];
     }
 
-    if (current.right) {
-      queue.enqueue(current.right);
-    }
-  }
+    const result = [];
+    const queue = new Queue();
 
-  return result;
+    queue.enqueue(root);
+
+    while (!queue.isEmpty()) {
+        const current = queue.dequeue();
+        result.push(current.data);
+
+        if (current.left) {
+            queue.enqueue(current.left);
+        }
+
+        if (current.right) {
+            queue.enqueue(current.right);
+        }
+    }
+
+    return result;
 }
 
 module.exports = {
-  Node,
-  breadthFirstTraversal,
+    Node,
+    breadthFirstTraversal,
 };
 ```
 
@@ -118,37 +118,37 @@ In this refactored code, we used the `Queue` class instead of a standard array f
 
 ```js
 describe('Breadth-First Traversal', () => {
-  test('Should perform breadth-first traversal on the binary tree', () => {
-    // Create a binary tree:      a
-    //                          /   \
-    //                         b     c
-    //                        / \    /
-    //                       d   e  f
+    test('Should perform breadth-first traversal on the binary tree', () => {
+        // Create a binary tree:      a
+        //                          /   \
+        //                         b     c
+        //                        / \    /
+        //                       d   e  f
 
-    const root = new Node('a');
-    const nodeB = new Node('b');
-    const nodeC = new Node('c');
-    const nodeD = new Node('d');
-    const nodeE = new Node('e');
-    const nodeF = new Node('f');
+        const root = new Node('a');
+        const nodeB = new Node('b');
+        const nodeC = new Node('c');
+        const nodeD = new Node('d');
+        const nodeE = new Node('e');
+        const nodeF = new Node('f');
 
-    root.left = nodeB;
-    root.right = nodeC;
-    nodeB.left = nodeD;
-    nodeB.right = nodeE;
-    nodeC.left = nodeF;
+        root.left = nodeB;
+        root.right = nodeC;
+        nodeB.left = nodeD;
+        nodeB.right = nodeE;
+        nodeC.left = nodeF;
 
-    expect(breadthFirstTraversal(root)).toEqual(['a', 'b', 'c', 'd', 'e', 'f']);
-  });
+        expect(breadthFirstTraversal(root)).toEqual(['a', 'b', 'c', 'd', 'e', 'f']);
+    });
 
-  test('Should return an empty array for an empty tree', () => {
-    expect(breadthFirstTraversal(null)).toEqual([]);
-  });
+    test('Should return an empty array for an empty tree', () => {
+        expect(breadthFirstTraversal(null)).toEqual([]);
+    });
 
-  test('Should handle a tree with only the root node', () => {
-    const root = new Node('root');
-    expect(breadthFirstTraversal(root)).toEqual(['root']);
-  });
+    test('Should handle a tree with only the root node', () => {
+        const root = new Node('root');
+        expect(breadthFirstTraversal(root)).toEqual(['root']);
+    });
 });
 ```
 

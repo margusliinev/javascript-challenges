@@ -27,9 +27,9 @@ reverseString('racecar'); // should return 'racecar'
 
 ### Hints
 
-- As a base case, you can check if the string is empty and return an empty string if so.
-- You can use recursion to reverse the string by recursively calling the function with the substring starting from the second character and then concatenating the first character at the end.
-- Remember how unwinding works and how function returns are added to the call stack in the reverse order of the function calls.
+-   As a base case, you can check if the string is empty and return an empty string if so.
+-   You can use recursion to reverse the string by recursively calling the function with the substring starting from the second character and then concatenating the first character at the end.
+-   Remember how unwinding works and how function returns are added to the call stack in the reverse order of the function calls.
 
 ## Solutions
 
@@ -38,11 +38,11 @@ reverseString('racecar'); // should return 'racecar'
 
 ```js
 function reverseString(str) {
-  if (str === '') {
-    return '';
-  }
+    if (str === '') {
+        return '';
+    }
 
-  return reverseString(str.substr(1)) + str[0];
+    return reverseString(str.substr(1)) + str[0];
 }
 ```
 
@@ -50,7 +50,7 @@ function reverseString(str) {
 
 The `reverseString` function uses recursion to reverse the string.
 
-- If the input string is empty (`str === ''`), return an empty string (`''`). Otherwise, it calls itself with the substring starting from the second character (`str.substr(1)`) and concatenates the first character of the original string at the end (`str[0]`).
+-   If the input string is empty (`str === ''`), return an empty string (`''`). Otherwise, it calls itself with the substring starting from the second character (`str.substr(1)`) and concatenates the first character of the original string at the end (`str[0]`).
 
 For example, if the input is `'hello'`, the function first calls itself with `'ello'` and concatenates `'h'` at the end. Then it calls itself with `'llo'` and concatenates `'e'` at the end. This process continues until the input becomes an empty string, and then the function starts concatenating the characters in reverse order, resulting in the reversed string `'olleh'`.
 
@@ -79,8 +79,7 @@ We could even cut this solution down to a single line:
 
 ```js
 // Shorter version
-const reverseString = (str) =>
-  str === '' ? '' : reverseString(str.substr(1)) + str.charAt(0);
+const reverseString = (str) => (str === '' ? '' : reverseString(str.substr(1)) + str.charAt(0));
 ```
 
 </details>
@@ -89,8 +88,8 @@ const reverseString = (str) =>
 
 ```js
 test('Reversing a string', () => {
-  expect(reverseString('Hello')).toBe('olleH');
-  expect(reverseString('JavaScript')).toBe('tpircSavaJ');
-  expect(reverseString('12345')).toBe('54321');
+    expect(reverseString('Hello')).toBe('olleH');
+    expect(reverseString('JavaScript')).toBe('tpircSavaJ');
+    expect(reverseString('12345')).toBe('54321');
 });
 ```

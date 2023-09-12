@@ -8,24 +8,24 @@ Logarithmic time complexity is denoted by Big O notation as O(log n) or "O of lo
 
 Consider a function called `findPower` that calculates the power of a number using recursion. The function takes two parameters:
 
-- `base` - the base number.
-- `exponent` - the exponent to which the base is raised.
+-   `base` - the base number.
+-   `exponent` - the exponent to which the base is raised.
 
 We will be using recursion in this example, which we learned about in the last section.
 
 ```js
 function findPower(base, exponent) {
-  if (exponent === 0) {
-    return 1;
-  }
+    if (exponent === 0) {
+        return 1;
+    }
 
-  if (exponent % 2 === 0) {
-    const halfPower = findPower(base, exponent / 2);
-    return halfPower * halfPower;
-  } else {
-    const halfPower = findPower(base, (exponent - 1) / 2);
-    return base * halfPower * halfPower;
-  }
+    if (exponent % 2 === 0) {
+        const halfPower = findPower(base, exponent / 2);
+        return halfPower * halfPower;
+    } else {
+        const halfPower = findPower(base, (exponent - 1) / 2);
+        return base * halfPower * halfPower;
+    }
 }
 ```
 

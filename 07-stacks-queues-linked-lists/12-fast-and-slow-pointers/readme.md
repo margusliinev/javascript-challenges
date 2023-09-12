@@ -23,22 +23,22 @@ a = 2;
 console.log(b); // 1
 ```
 
-Objects and arrays, on the other hand, behave differently. When you assign an object or an array to another variable, you are actually copying the reference to the object or array, not the actual value. This means that both variables will point to the same memory location where the object or array is stored. Consequently, if you modify the contents of the object or array using one variable, the changes will be reflected when accessing the object or array through the other variable. 
+Objects and arrays, on the other hand, behave differently. When you assign an object or an array to another variable, you are actually copying the reference to the object or array, not the actual value. This means that both variables will point to the same memory location where the object or array is stored. Consequently, if you modify the contents of the object or array using one variable, the changes will be reflected when accessing the object or array through the other variable.
 
 Let's look at an example:
 
 ```js
-const c = {name: 'John'};
+const c = { name: 'John' };
 const d = c;
 console.log(d.name); // John
 ```
 
-`d` now points to the same area in memory as `c`. If we log `d.name`, we get John. 
+`d` now points to the same area in memory as `c`. If we log `d.name`, we get John.
 
 If I change the value of `c.name` to Brad and then log `d.name`, you will see that `d.name` is now Brad as well. This is because we copy the reference not the actual value.
 
 ```js
-const c = {name: 'John'};
+const c = { name: 'John' };
 const d = c;
 c.name = 'Brad';
 console.log(d.name); // Brad

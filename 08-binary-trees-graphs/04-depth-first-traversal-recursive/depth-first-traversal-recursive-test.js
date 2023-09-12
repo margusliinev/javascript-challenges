@@ -1,7 +1,4 @@
-const {
-  Node,
-  recDepthFirstTraversal,
-} = require('./depth-first-traversal-recursive');
+const { Node, recDepthFirstTraversal } = require('./depth-first-traversal-recursive');
 
 // Test tree: a -> b -> d
 //             \-> e
@@ -14,5 +11,5 @@ root.left.right = new Node('e');
 root.right.left = new Node('f');
 
 test('Depth First Traversal', () => {
-  expect(recDepthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
+    expect(recDepthFirstTraversal(root)).toEqual(['a', 'b', 'd', 'e', 'c', 'f']);
 });
