@@ -1,11 +1,3 @@
-function removeDuplicates(arr) {
-    const uniqueArr = arr.reduce((acc, curr) => {
-        if (!acc.includes(curr)) {
-            acc.push(curr);
-        }
-        return acc;
-    }, []);
-    return uniqueArr;
-}
+function removeDuplicates() {}
 
 module.exports = removeDuplicates;
