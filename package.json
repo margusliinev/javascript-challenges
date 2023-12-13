@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "javascript challenges with different data structures and algorithms",
     "main": "index.js",
-    "type": "module",
     "scripts": {
         "test": "jest",
         "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,md}\""
