@@ -1,5 +1,5 @@
-import fs from 'fs/promises';
-import path from 'path';
+const fs = require('fs/promises');
+const path = require('path');
 
 async function renameTestFiles(folderPath) {
     try {
@@ -25,5 +25,5 @@ async function renameTestFiles(folderPath) {
 // Before starting a new section of challenges, run this script to rename all the test files in the section directory
 // This allows you to run the tests in the current section while tests in the other directories stay disabled
 
-const folderPath = '/home/margus/code/javascript-challenges/02-basic-challenges-2';
+const folderPath = '/home/margus/code/javascript-challenges/03-high-order-array-methods';
 renameTestFiles(folderPath);
