@@ -25,5 +25,5 @@ async function renameTestFiles(folderPath) {
 // Before starting a new section of challenges, run this script to rename all the test files in the section directory
 // This allows you to run the tests in the current section while tests in the other directories stay disabled
 
-const folderPath = '/home/margus/code/javascript-challenges/08-binary-trees-graphs';
+const folderPath = '/home/margus/code/javascript-challenges/09-sorting-algorithms';
 renameTestFiles(folderPath);
