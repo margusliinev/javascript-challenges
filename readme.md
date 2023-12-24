@@ -1,10 +1,6 @@
-# Traversy JS Challenges: Data Structures & Algorithms
+# Javascript Challenges: Data Structures & Algorithms
 
-This is the sandbox for my [70+ JS Challenges: Data Structures & Algorithms Course](https://www.traversymedia.com/javascript-challeges). Just about all of the concepts that are included, also exist in other languages. So, if you are not a JavaScript developer, you can still follow along and learn from this course/repo.
-
-This course/repo goes over everything from basic loop challenges, high order array methods, recursion, time & space complexity, data structures such as stacks, queues, linked lists, trees, graphs, and we touch on sorting algorithms like bubble sort, insertion and merge sort. You should already know the basics of JavaScript before doing any of the challenges or taking the course.
-
-Please do not make any PRs to this repo as it goes along with a specific course. I may open another one for student solutions and new challenges.
+This repo goes over everything from basic loop challenges, high order array methods, recursion, time & space complexity, data structures such as stacks, queues, linked lists, trees, graphs, sorting algorithms like bubble sort, insertion, merge sort and also we will implement binary search using test driven development. You should already know the basics of JavaScript before doing any of the challenges.
 
 ## File Structure
 
@@ -190,3 +186,9 @@ In this section, we will get into sorting algorithms. We will start with `bubble
 9. [Merge Sort Implementation](./09-sorting-algorithms/09-merge-sort-implementation/readme.md)
 10. [Quick Sort Algorithm](./09-sorting-algorithms/10-quick-sort-algorithm/readme.md)
 11. [Quick Sort Implementation](./09-sorting-algorithms/11-quick-sort-implementation/readme.md)
+
+#### 10. Binary Search
+
+In this section, we will get into binary search. We will implement binary search using test driven development (TDD) and use recursion for the optimal solution.
+
+1. [Binary Search](./10-binary-search/readme.md)
