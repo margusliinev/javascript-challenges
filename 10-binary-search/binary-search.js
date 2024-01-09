@@ -14,4 +14,25 @@ function binarySearch(arr, element, startIdx = 0, endIdx = arr.length) {
     }
 }
 
+// Alternative solution
+
+// function binarySearch(arr, element) {
+//     let startIdx = 0;
+//     let endIdx = arr.length - 1;
+
+//     while (startIdx <= endIdx) {
+//         const midIdx = Math.floor((startIdx + endIdx) / 2);
+
+//         if (arr[midIdx] === element) {
+//             return midIdx;
+//         } else if (element < arr[midIdx]) {
+//             endIdx = midIdx - 1;
+//         } else {
+//             startIdx = midIdx + 1;
+//         }
+//     }
+
+//     return -1;
+// }
+
 module.exports = binarySearch;
